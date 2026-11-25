@@ -24,6 +24,24 @@ from [`.env.example`](./.env.example).
 5. Uploads are written to `UPLOAD_DIR`, which is ephemeral on Vercel. For production, point
    `UPLOAD_DIR` at a mounted volume or swap `src/lib/storage.ts` for S3/R2.
 
+## 1b. Vercel from GitHub Actions (no local setup)
+
+`.github/workflows/deploy-vercel.yml` deploys `main` to production on every push once three
+repository secrets exist. Nothing else needs to change.
+
+| Secret | Where to find it |
+|---|---|
+| `VERCEL_TOKEN` | Vercel → Account settings → Tokens → Create |
+| `VERCEL_ORG_ID` | `vercel link` writes it to `.vercel/project.json`, or Project → Settings → General |
+| `VERCEL_PROJECT_ID` | same file / same page |
+
+Set `DATABASE_URL` and the other variables in the Vercel project itself (not in GitHub) — the
+workflow pulls them with `vercel pull`. It then runs `prisma migrate deploy` against that
+database before publishing, and skips migrations if `DATABASE_URL` is absent.
+
+`npm install` runs `prisma generate` through the `postinstall` script, so the Prisma client
+exists before `next build` on any host.
+
 ## 2. Docker / any VPS
 
 ```bash
