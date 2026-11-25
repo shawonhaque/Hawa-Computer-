@@ -120,9 +120,9 @@ rate limiting, upload handling, headers and the go-live checklist.
 
 ## Deployment
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/shawonhaque/Hawa-Computer-&env=DATABASE_URL,NEXT_PUBLIC_SITE_URL&project-name=hawa-computer)
+**Static preview (no server needed):** <https://shawonhaque.github.io/Hawa-Computer-/>
 
-Full instructions for Vercel, Docker and a bare Node process live in [DEPLOY.md](./DEPLOY.md).
+**Full application (orders, accounts, admin):** Docker or any Node host with PostgreSQL.
 
 ```bash
 # Docker / VPS
@@ -131,9 +131,12 @@ docker compose up -d --build
 ```
 
 ```bash
-# Vercel or any Node host
+# Any Node host
 npm ci && npx prisma migrate deploy && npm run build && npm start
 ```
+
+Step-by-step instructions for Docker, a bare Node process and Vercel live in
+[DEPLOY.md](./DEPLOY.md).
 
 The app is stateless apart from uploads and PostgreSQL, so it scales horizontally — but replace
 the in-memory rate limiter with Redis before running more than one instance.

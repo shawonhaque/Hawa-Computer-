@@ -39,7 +39,7 @@ export default async function HomePage() {
   const bn = locale === "bn";
   const settings = await getSettings();
 
-  const [featured, applications, studio, products, courses, testimonials, serviceCount, productCount] =
+  const [featured, applications, studio, products, courses, testimonials, faqs, serviceCount, productCount] =
     await Promise.all([
       prisma.service.findMany({
         where: { active: true, featured: true },
@@ -66,6 +66,7 @@ export default async function HomePage() {
         orderBy: { createdAt: "desc" },
         take: 3,
       }),
+      prisma.faq.findMany({ where: { active: true }, orderBy: { sortOrder: "asc" }, take: 6 }),
       prisma.service.count({ where: { active: true } }),
       prisma.product.count({ where: { active: true } }),
     ]);
@@ -346,6 +347,37 @@ export default async function HomePage() {
         </section>
       ) : null}
 
+      {faqs.length > 0 ? (
+        <section className="container-page pb-12 sm:pb-16">
+          <SectionHeading
+            eyebrow={bn ? "প্রশ্নোত্তর" : "FAQ"}
+            title={d.home.faq}
+            subtitle={bn ? "গ্রাহকেরা সবচেয়ে বেশি যা জানতে চান" : "What customers ask us most"}
+            action={
+              <Link
+                href="/faq"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-royal hover:underline"
+              >
+                {d.common.viewAll} <ArrowRight size={14} />
+              </Link>
+            }
+          />
+          <div className="mx-auto max-w-3xl space-y-3">
+            {faqs.map((faq) => (
+              <details key={faq.id} className="card group p-4 open:pb-4">
+                <summary className="flex cursor-pointer items-center justify-between gap-3 text-sm font-semibold marker:content-none">
+                  {bn ? faq.questionBn : faq.questionEn}
+                  <span className="text-royal transition group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {bn ? faq.answerBn : faq.answerEn}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="container-page py-12 sm:py-16">
         <div className="card flex flex-col items-start gap-6 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
           <div className="max-w-xl">
@@ -369,6 +401,31 @@ export default async function HomePage() {
             </Link>
           </div>
         </div>
+
+        {settings.mapEmbedUrl ? (
+          <div className="mt-6 grid gap-4 lg:grid-cols-[1fr_1.2fr]">
+            <div className="card p-6">
+              <h3 className="text-sm font-semibold">{bn ? "আমাদের ঠিকানা" : "Visit our shop"}</h3>
+              <p className="mt-2 text-sm text-muted">{bn ? settings.addressBn : settings.addressEn}</p>
+              <p className="mt-1 text-sm text-muted">{bn ? settings.hoursBn : settings.hoursEn}</p>
+              <a href={`tel:${settings.phone}`} className="mt-3 inline-block text-sm font-semibold text-royal">
+                {settings.phone}
+              </a>
+              <a href={`mailto:${settings.email}`} className="mt-1 block text-sm text-royal">
+                {settings.email}
+              </a>
+            </div>
+            <div className="card overflow-hidden">
+              <iframe
+                src={settings.mapEmbedUrl}
+                title={bn ? "ম্যাপে আমাদের অবস্থান" : "Our location on the map"}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-64 w-full border-0 lg:h-full"
+              />
+            </div>
+          </div>
+        ) : null}
       </section>
     </>
   );

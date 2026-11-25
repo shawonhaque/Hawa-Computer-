@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX || basePath || undefined;
 
 const nextConfig: NextConfig = {
   basePath,
-  assetPrefix: basePath || undefined,
+  assetPrefix,
   experimental: {
     serverActions: {
       bodySizeLimit: "12mb",
