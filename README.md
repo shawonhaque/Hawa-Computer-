@@ -118,11 +118,20 @@ rate limiting, upload handling, headers and the go-live checklist.
 
 ## Deployment
 
-1. Provision PostgreSQL and set `DATABASE_URL`.
-2. `npm ci && npx prisma migrate deploy && npm run build`.
-3. `npm start` behind a TLS-terminating proxy (HSTS is sent in production).
-4. Persist `UPLOAD_DIR` on a volume and back it up with the database.
-5. Set `NEXT_PUBLIC_SITE_URL` to the public origin so canonical links and the sitemap are correct.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/shawonhaque/Hawa-Computer-&env=DATABASE_URL,NEXT_PUBLIC_SITE_URL&project-name=hawa-computer)
+
+Full instructions for Vercel, Docker and a bare Node process live in [DEPLOY.md](./DEPLOY.md).
+
+```bash
+# Docker / VPS
+docker compose --profile setup run --rm migrate   # migrate + seed
+docker compose up -d --build
+```
+
+```bash
+# Vercel or any Node host
+npm ci && npx prisma migrate deploy && npm run build && npm start
+```
 
 The app is stateless apart from uploads and PostgreSQL, so it scales horizontally — but replace
 the in-memory rate limiter with Redis before running more than one instance.
