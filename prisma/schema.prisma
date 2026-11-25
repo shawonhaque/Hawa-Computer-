@@ -1,0 +1,909 @@
+// Hawa Computer — business platform schema
+// Money is stored as whole Taka (BDT) in Int columns.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Identity, roles and access control
+// ---------------------------------------------------------------------------
+
+enum UserStatus {
+  ACTIVE
+  SUSPENDED
+  DELETED
+}
+
+model Role {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String?
+  permissions Json     @default("[]")
+  isStaff     Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  users User[]
+}
+
+model User {
+  id              String     @id @default(cuid())
+  name            String
+  email           String     @unique
+  phone           String?    @unique
+  passwordHash    String
+  avatarUrl       String?
+  roleId          String
+  status          UserStatus @default(ACTIVE)
+  emailVerifiedAt DateTime?
+  lastLoginAt     DateTime?
+  locale          String     @default("bn")
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  role    Role             @relation(fields: [roleId], references: [id])
+  profile CustomerProfile?
+  staff   Staff?
+  sessions Session[]
+
+  orders           Order[]
+  serviceOrders    ServiceOrder[]
+  applications     Application[]
+  payments         Payment[]        @relation("PaymentPayer")
+  verifiedPayments Payment[]        @relation("PaymentVerifier")
+  refundsProcessed Refund[]
+  enrollments      Enrollment[]
+  libraryMember    LibraryMember?
+  notifications    Notification[]
+  tickets          SupportTicket[]
+  ticketMessages   TicketMessage[]
+  reviews          Review[]
+  wishlist         WishlistItem[]
+  files            UploadedFile[]
+  auditLogs        AuditLog[]
+  assignedApplications Application[] @relation("ApplicationAssignee")
+  assignedOrders       ServiceOrder[] @relation("OrderAssignee")
+  assignedTickets      SupportTicket[] @relation("TicketAssignee")
+
+  @@index([roleId])
+  @@index([status])
+}
+
+model CustomerProfile {
+  id          String    @id @default(cuid())
+  userId      String    @unique
+  address     String?
+  city        String?
+  district    String?
+  postcode    String?
+  dateOfBirth DateTime?
+  gender      String?
+  notes       String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Staff {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  designation String?
+  joinedAt    DateTime @default(now())
+  salary      Int?
+  active      Boolean  @default(true)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  ip        String?
+  userAgent String?
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+// ---------------------------------------------------------------------------
+// Services catalogue
+// ---------------------------------------------------------------------------
+
+model ServiceCategory {
+  id        String    @id @default(cuid())
+  slug      String    @unique
+  nameBn    String
+  nameEn    String
+  icon      String    @default("Sparkles")
+  sortOrder Int       @default(0)
+  active    Boolean   @default(true)
+  services  Service[]
+}
+
+enum ServiceKind {
+  APPLICATION
+  PHOTO
+  DOCUMENT
+  PRINTING
+  OTHER
+}
+
+model Service {
+  id               String      @id @default(cuid())
+  slug             String      @unique
+  categoryId       String
+  nameBn           String
+  nameEn           String
+  summaryBn        String
+  summaryEn        String
+  icon             String?
+  descriptionBn    String      @db.Text
+  descriptionEn    String      @db.Text
+  kind             ServiceKind @default(APPLICATION)
+  price            Int
+  priceNoteBn      String?
+  priceNoteEn      String?
+  processingTimeBn String
+  processingTimeEn String
+  requirements     Json        @default("[]")
+  documents        Json        @default("[]")
+  formFields       Json        @default("[]")
+  requiresConsent  Boolean     @default(true)
+  active           Boolean     @default(true)
+  featured         Boolean     @default(false)
+  sortOrder        Int         @default(0)
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  category     ServiceCategory @relation(fields: [categoryId], references: [id])
+  orders       ServiceOrder[]
+  applications Application[]
+
+  @@index([categoryId])
+  @@index([kind])
+}
+
+enum ServiceOrderStatus {
+  PENDING
+  PAYMENT_PENDING
+  PROCESSING
+  NEED_MORE_INFO
+  IN_REVIEW
+  COMPLETED
+  DELIVERED
+  CANCELLED
+}
+
+model ServiceOrder {
+  id              String             @id @default(cuid())
+  orderNo         String             @unique
+  customerId      String
+  serviceId       String
+  status          ServiceOrderStatus @default(PENDING)
+  quantity        Int                @default(1)
+  unitPrice       Int
+  total           Int
+  details         Json               @default("{}")
+  instructions    String?            @db.Text
+  deliveryMethod  String             @default("PICKUP")
+  deliveryAddress String?
+  assignedToId    String?
+  customerNote    String?            @db.Text
+  internalNote    String?            @db.Text
+  dueAt           DateTime?
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
+  customer   User                 @relation(fields: [customerId], references: [id])
+  service    Service              @relation(fields: [serviceId], references: [id])
+  assignedTo User?                @relation("OrderAssignee", fields: [assignedToId], references: [id])
+  files      OrderFile[]
+  history    OrderStatusHistory[]
+  payments   Payment[]
+
+  @@index([customerId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model OrderFile {
+  id             String   @id @default(cuid())
+  serviceOrderId String
+  fileId         String
+  kind           String   @default("CUSTOMER_UPLOAD")
+  label          String?
+  createdAt      DateTime @default(now())
+
+  serviceOrder ServiceOrder @relation(fields: [serviceOrderId], references: [id], onDelete: Cascade)
+  file         UploadedFile @relation(fields: [fileId], references: [id])
+
+  @@index([serviceOrderId])
+}
+
+model OrderStatusHistory {
+  id             String              @id @default(cuid())
+  serviceOrderId String
+  fromStatus     ServiceOrderStatus?
+  toStatus       ServiceOrderStatus
+  note           String?
+  createdById    String?
+  createdAt      DateTime            @default(now())
+
+  serviceOrder ServiceOrder @relation(fields: [serviceOrderId], references: [id], onDelete: Cascade)
+
+  @@index([serviceOrderId])
+}
+
+model Application {
+  id           String             @id @default(cuid())
+  trackingId   String             @unique
+  customerId   String
+  serviceId    String
+  status       ServiceOrderStatus @default(PENDING)
+  formData     Json               @default("{}")
+  consentAt    DateTime?
+  assignedToId String?
+  customerNote String?            @db.Text
+  internalNote String?            @db.Text
+  submittedAt  DateTime           @default(now())
+  completedAt  DateTime?
+  updatedAt    DateTime           @updatedAt
+
+  customer   User                  @relation(fields: [customerId], references: [id])
+  service    Service               @relation(fields: [serviceId], references: [id])
+  assignedTo User?                 @relation("ApplicationAssignee", fields: [assignedToId], references: [id])
+  documents  ApplicationDocument[]
+  history    ApplicationStatusHistory[]
+  payments   Payment[]
+
+  @@index([customerId])
+  @@index([status])
+}
+
+model ApplicationDocument {
+  id            String   @id @default(cuid())
+  applicationId String
+  fileId        String
+  label         String
+  createdAt     DateTime @default(now())
+
+  application Application  @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  file        UploadedFile @relation(fields: [fileId], references: [id])
+
+  @@index([applicationId])
+}
+
+model ApplicationStatusHistory {
+  id            String              @id @default(cuid())
+  applicationId String
+  fromStatus    ServiceOrderStatus?
+  toStatus      ServiceOrderStatus
+  note          String?
+  createdById   String?
+  createdAt     DateTime            @default(now())
+
+  application Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@index([applicationId])
+}
+
+model UploadedFile {
+  id           String   @id @default(cuid())
+  storedName   String   @unique
+  originalName String
+  mime         String
+  size         Int
+  checksum     String?
+  isPublic     Boolean  @default(false)
+  uploadedById String?
+  createdAt    DateTime @default(now())
+
+  uploader        User?               @relation(fields: [uploadedById], references: [id])
+  orderFiles      OrderFile[]
+  applicationDocs ApplicationDocument[]
+  payments        Payment[]
+
+  @@index([uploadedById])
+}
+
+// ---------------------------------------------------------------------------
+// E-commerce
+// ---------------------------------------------------------------------------
+
+model ProductCategory {
+  id        String    @id @default(cuid())
+  slug      String    @unique
+  nameBn    String
+  nameEn    String
+  sortOrder Int       @default(0)
+  active    Boolean   @default(true)
+  products  Product[]
+}
+
+model Product {
+  id            String   @id @default(cuid())
+  sku           String   @unique
+  slug          String   @unique
+  categoryId    String
+  nameBn        String
+  nameEn        String
+  descriptionBn String   @db.Text
+  descriptionEn String   @db.Text
+  price         Int
+  comparePrice  Int?
+  stock         Int      @default(0)
+  lowStockAt    Int      @default(5)
+  images        Json     @default("[]")
+  brand         String?
+  active        Boolean  @default(true)
+  featured      Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  category   ProductCategory @relation(fields: [categoryId], references: [id])
+  orderItems OrderItem[]
+  reviews    Review[]
+  wishlisted WishlistItem[]
+  stockMoves StockMovement[]
+
+  @@index([categoryId])
+  @@index([active])
+}
+
+model WishlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PACKED
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  RETURNED
+}
+
+enum PaymentStatus {
+  UNPAID
+  PARTIAL
+  PAID
+  REFUNDED
+}
+
+model Order {
+  id            String        @id @default(cuid())
+  orderNo       String        @unique
+  customerId    String
+  status        OrderStatus   @default(PENDING)
+  paymentStatus PaymentStatus @default(UNPAID)
+  subtotal      Int
+  deliveryFee   Int           @default(0)
+  discount      Int           @default(0)
+  total         Int
+  couponCode    String?
+  receiverName  String
+  phone         String
+  address       String        @db.Text
+  city          String?
+  notes         String?       @db.Text
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  customer User        @relation(fields: [customerId], references: [id])
+  items    OrderItem[]
+  payments Payment[]
+  invoice  Invoice?
+  refunds  Refund[]
+
+  @@index([customerId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  productId String?
+  name      String
+  sku       String?
+  quantity  Int
+  unitPrice Int
+  total     Int
+
+  order   Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product? @relation(fields: [productId], references: [id])
+
+  @@index([orderId])
+}
+
+enum PaymentMethod {
+  BKASH
+  NAGAD
+  ROCKET
+  CARD
+  BANK
+  CASH
+  COD
+}
+
+enum PaymentVerification {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+model Payment {
+  id             String              @id @default(cuid())
+  reference      String              @unique
+  orderId        String?
+  serviceOrderId String?
+  applicationId  String?
+  payerId        String?
+  method         PaymentMethod
+  amount         Int
+  currency       String              @default("BDT")
+  trxId          String?
+  payerNumber    String?
+  screenshotId   String?
+  status         PaymentVerification @default(PENDING)
+  verifiedById   String?
+  verifiedAt     DateTime?
+  rejectionNote  String?
+  createdAt      DateTime            @default(now())
+
+  order        Order?        @relation(fields: [orderId], references: [id])
+  serviceOrder ServiceOrder? @relation(fields: [serviceOrderId], references: [id])
+  application  Application?  @relation(fields: [applicationId], references: [id])
+  payer        User?         @relation("PaymentPayer", fields: [payerId], references: [id])
+  verifiedBy   User?         @relation("PaymentVerifier", fields: [verifiedById], references: [id])
+  screenshot   UploadedFile? @relation(fields: [screenshotId], references: [id])
+  refund       Refund?
+
+  @@index([orderId])
+  @@index([status])
+}
+
+model Refund {
+  id            String   @id @default(cuid())
+  paymentId     String   @unique
+  orderId       String?
+  amount        Int
+  reason        String   @db.Text
+  status        String   @default("PENDING")
+  processedById String?
+  createdAt     DateTime @default(now())
+
+  payment     Payment @relation(fields: [paymentId], references: [id])
+  order       Order?  @relation(fields: [orderId], references: [id])
+  processedBy User?   @relation(fields: [processedById], references: [id])
+}
+
+model Invoice {
+  id          String   @id @default(cuid())
+  number      String   @unique
+  orderId     String   @unique
+  subtotal    Int
+  deliveryFee Int
+  discount    Int
+  total       Int
+  issuedAt    DateTime @default(now())
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model Coupon {
+  id        String    @id @default(cuid())
+  code      String    @unique
+  type      String    @default("PERCENT")
+  value     Int
+  minOrder  Int       @default(0)
+  maxUses   Int?
+  usedCount Int       @default(0)
+  active    Boolean   @default(true)
+  expiresAt DateTime?
+  createdAt DateTime  @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// Inventory, suppliers and purchasing
+// ---------------------------------------------------------------------------
+
+model Supplier {
+  id          String   @id @default(cuid())
+  name        String
+  contactName String?
+  phone       String?
+  email       String?
+  address     String?
+  createdAt   DateTime @default(now())
+  purchases   Purchase[]
+}
+
+model Purchase {
+  id          String   @id @default(cuid())
+  refNo       String   @unique
+  supplierId  String
+  total       Int
+  note        String?
+  purchasedAt DateTime @default(now())
+  createdById String?
+
+  supplier Supplier       @relation(fields: [supplierId], references: [id])
+  items    PurchaseItem[]
+}
+
+model PurchaseItem {
+  id         String @id @default(cuid())
+  purchaseId String
+  productId  String?
+  name       String
+  quantity   Int
+  unitCost   Int
+  total      Int
+
+  purchase Purchase @relation(fields: [purchaseId], references: [id], onDelete: Cascade)
+}
+
+enum StockMovementType {
+  IN
+  OUT
+  ADJUSTMENT
+}
+
+model StockMovement {
+  id          String            @id @default(cuid())
+  productId   String
+  type        StockMovementType
+  quantity    Int
+  reason      String?
+  reference   String?
+  createdById String?
+  createdAt   DateTime          @default(now())
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([createdAt])
+}
+
+model Expense {
+  id          String   @id @default(cuid())
+  category    String
+  amount      Int
+  note        String?
+  spentAt     DateTime @default(now())
+  createdById String?
+  createdAt   DateTime @default(now())
+
+  @@index([spentAt])
+}
+
+// ---------------------------------------------------------------------------
+// Library
+// ---------------------------------------------------------------------------
+
+model BookCategory {
+  id     String @id @default(cuid())
+  slug   String @unique
+  nameBn String
+  nameEn String
+  books  Book[]
+}
+
+model Book {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  categoryId      String
+  titleBn         String
+  titleEn         String
+  author          String
+  isbn            String?  @unique
+  publisher       String?
+  publishedYear   Int?
+  descriptionBn   String   @db.Text
+  descriptionEn   String   @db.Text
+  coverUrl        String?
+  shelf           String?
+  copiesTotal     Int      @default(1)
+  copiesAvailable Int      @default(1)
+  createdAt       DateTime @default(now())
+
+  category BookCategory @relation(fields: [categoryId], references: [id])
+  issues   BookIssue[]
+
+  @@index([categoryId])
+}
+
+model LibraryMember {
+  id        String    @id @default(cuid())
+  memberNo  String    @unique
+  userId    String    @unique
+  status    String    @default("ACTIVE")
+  joinedAt  DateTime  @default(now())
+  expiresAt DateTime?
+
+  user   User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  issues BookIssue[]
+}
+
+model BookIssue {
+  id         String    @id @default(cuid())
+  bookId     String
+  memberId   String
+  issuedAt   DateTime  @default(now())
+  dueAt      DateTime
+  returnedAt DateTime?
+  fine       Int       @default(0)
+  status     String    @default("ISSUED")
+
+  book   Book          @relation(fields: [bookId], references: [id])
+  member LibraryMember @relation(fields: [memberId], references: [id])
+
+  @@index([bookId])
+  @@index([memberId])
+}
+
+// ---------------------------------------------------------------------------
+// Training
+// ---------------------------------------------------------------------------
+
+model Course {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  titleBn       String
+  titleEn       String
+  summaryBn     String
+  summaryEn     String
+  descriptionBn String   @db.Text
+  descriptionEn String   @db.Text
+  durationWeeks Int
+  fee           Int
+  level         String   @default("BEGINNER")
+  syllabus      Json     @default("[]")
+  coverUrl      String?
+  active        Boolean  @default(true)
+  featured      Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  batches     Batch[]
+  enrollments Enrollment[]
+}
+
+model Batch {
+  id           String    @id @default(cuid())
+  courseId     String
+  code         String    @unique
+  startDate    DateTime
+  endDate      DateTime?
+  scheduleBn   String
+  scheduleEn   String
+  capacity     Int       @default(20)
+  instructorId String?
+  active       Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+
+  course      Course       @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  enrollments Enrollment[]
+
+  @@index([courseId])
+}
+
+enum EnrollmentStatus {
+  PENDING
+  ACTIVE
+  COMPLETED
+  DROPPED
+  CANCELLED
+}
+
+model Enrollment {
+  id          String           @id @default(cuid())
+  studentId   String
+  courseId    String
+  batchId     String?
+  status      EnrollmentStatus @default(PENDING)
+  feePaid     Int              @default(0)
+  progress    Int              @default(0)
+  enrolledAt  DateTime         @default(now())
+  completedAt DateTime?
+  certificate Certificate?
+
+  student    User         @relation(fields: [studentId], references: [id])
+  course     Course       @relation(fields: [courseId], references: [id])
+  batch      Batch?       @relation(fields: [batchId], references: [id])
+  attendance Attendance[]
+
+  @@unique([studentId, courseId])
+  @@index([batchId])
+}
+
+model Attendance {
+  id           String   @id @default(cuid())
+  enrollmentId String
+  date         DateTime
+  status       String   @default("PRESENT")
+  note         String?
+
+  enrollment Enrollment @relation(fields: [enrollmentId], references: [id], onDelete: Cascade)
+
+  @@unique([enrollmentId, date])
+}
+
+model Certificate {
+  id           String   @id @default(cuid())
+  certNo       String   @unique
+  enrollmentId String   @unique
+  issuedAt     DateTime @default(now())
+  grade        String?
+  revoked      Boolean  @default(false)
+
+  enrollment Enrollment @relation(fields: [enrollmentId], references: [id], onDelete: Cascade)
+}
+
+// ---------------------------------------------------------------------------
+// Content management, support and auditing
+// ---------------------------------------------------------------------------
+
+model SiteSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+model Page {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  titleBn   String
+  titleEn   String
+  contentBn String   @db.Text
+  contentEn String   @db.Text
+  published Boolean  @default(true)
+  updatedAt DateTime @updatedAt
+}
+
+model Banner {
+  id         String  @id @default(cuid())
+  titleBn    String
+  titleEn    String
+  subtitleBn String?
+  subtitleEn String?
+  imageUrl   String?
+  link       String?
+  active     Boolean @default(true)
+  sortOrder  Int     @default(0)
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  roleBn    String?
+  roleEn    String?
+  messageBn String   @db.Text
+  messageEn String   @db.Text
+  rating    Int      @default(5)
+  avatarUrl String?
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Faq {
+  id         String  @id @default(cuid())
+  questionBn String
+  questionEn String
+  answerBn   String  @db.Text
+  answerEn   String  @db.Text
+  category   String  @default("general")
+  sortOrder  Int     @default(0)
+  active     Boolean @default(true)
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String   @db.Text
+  status    String   @default("NEW")
+  createdAt DateTime @default(now())
+}
+
+model Notification {
+  id        String    @id @default(cuid())
+  userId    String
+  title     String
+  body      String    @db.Text
+  link      String?
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt])
+}
+
+model SupportTicket {
+  id           String   @id @default(cuid())
+  ticketNo     String   @unique
+  userId       String
+  subject      String
+  status       String   @default("OPEN")
+  priority     String   @default("NORMAL")
+  assignedToId String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user       User            @relation(fields: [userId], references: [id])
+  assignedTo User?           @relation("TicketAssignee", fields: [assignedToId], references: [id])
+  messages   TicketMessage[]
+
+  @@index([userId])
+  @@index([status])
+}
+
+model TicketMessage {
+  id        String   @id @default(cuid())
+  ticketId  String
+  authorId  String
+  body      String   @db.Text
+  isStaff   Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  ticket SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  author User          @relation(fields: [authorId], references: [id])
+
+  @@index([ticketId])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  productId String
+  userId    String
+  rating    Int
+  comment   String?  @db.Text
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, userId])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  action    String
+  entity    String
+  entityId  String?
+  meta      Json     @default("{}")
+  ip        String?
+  createdAt DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [id])
+
+  @@index([createdAt])
+  @@index([entity, entityId])
+}
