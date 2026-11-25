@@ -1,4 +1,6 @@
 # Hawa Computer — website & management platform
+> **Live preview:** <https://shawonhaque.github.io/Hawa-Computer-/> — static build of the public storefront (bilingual Bangla/English). Ordering, accounts and the admin panel need the full deployment.
+
 
 A bilingual (Bangla / English) website and back-office for **Hawa Computer**, a Bangladeshi
 computer and IT services business. One codebase covers the public site, the customer account
