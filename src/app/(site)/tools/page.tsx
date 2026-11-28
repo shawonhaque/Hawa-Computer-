@@ -134,6 +134,30 @@ export default async function ToolsPage() {
         }
       />
 
+      <section className="container-page -mt-6 pb-2">
+        <Link
+          href="/tools/photo"
+          className="card flex flex-col gap-3 border-royal/30 bg-royal-soft/60 p-5 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div className="flex items-start gap-3">
+            <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-royal text-white">
+              <Camera size={20} />
+            </span>
+            <div>
+              <p className="text-sm font-bold">{bn ? "ফটো এডিটর — এখনই ব্যবহার করুন" : "Photo editor — use it now"}</p>
+              <p className="mt-0.5 text-xs text-muted">
+                {bn
+                  ? "ছবি আপলোড করে পাসপোর্ট / ভিসা / এনআইডি সাইজে ক্রপ করুন, আলো ঠিক করুন, ৪×৬ প্রিন্ট শিট নামিয়ে নিন।"
+                  : "Upload a photo, crop to passport / visa / NID size, fix the light and download a 4×6 print sheet."}
+              </p>
+            </div>
+          </div>
+          <span className="btn btn-primary btn-sm shrink-0">
+            {bn ? "খুলুন" : "Open"} <ArrowRight size={14} />
+          </span>
+        </Link>
+      </section>
+
       <section className="container-page py-10 sm:py-14">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {groups.map((group) => {
