@@ -19,10 +19,19 @@ export function Footer({
   const hours = bn ? settings.hoursBn : settings.hoursEn;
 
   return (
-    <footer className="mt-auto border-t border-line bg-surface">
+    <footer className="mt-auto border-t border-white/70 bg-white/45 backdrop-blur-xl">
       <div className="container-page grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo name={name} tagline={tagline} />
+          <img
+            src="/brand/hawa-logo.jpg"
+            alt={name}
+            width={1275}
+            height={846}
+            className="h-16 w-auto rounded-lg bg-white/80 object-contain p-1 shadow-[0_10px_26px_-22px_rgba(29,27,49,0.6)]"
+            loading="lazy"
+          />
+          <p className="mt-3 text-sm font-bold">{name}</p>
+          <p className="text-xs text-muted">{tagline}</p>
           <p className="mt-4 text-sm leading-relaxed text-muted">{d.footer.disclaimer}</p>
           {settings.facebook ? (
             <a href={settings.facebook} target="_blank" rel="noreferrer noopener" className="mt-4 inline-flex items-center gap-2 text-sm text-muted hover:text-royal">

@@ -113,24 +113,20 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-line bg-navy text-white">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_15%,rgba(245,158,11,0.20),transparent_40%),radial-gradient(circle_at_85%_5%,rgba(128,104,251,0.30),transparent_45%),linear-gradient(160deg,#211d38_0%,#1d1b31_45%,#191729_100%)]"
-        />
-        <div className="container-page relative py-12 sm:py-16">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+      <section className="relative">
+        <div className="container-page relative py-10 sm:py-14">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-[#ffd08a] backdrop-blur">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/60 px-3 py-1 text-xs font-semibold tracking-wide text-royal shadow-[0_8px_20px_-16px_rgba(29,27,49,0.5)] backdrop-blur-md">
                 <Sparkles size={13} /> {bn ? "কম্পিউটার দোকান ও স্টুডিওর জন্য" : "Built for computer shops and studios"}
               </span>
               <h1 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-[2.9rem] sm:leading-[1.15]">
                 {bn ? "আপনার সব ডিজিটাল কাজ এক জায়গায়, " : "Every digital job in one place, "}
-                <span className="bg-gradient-to-r from-[#ffb44d] via-[#f59e0b] to-[#ffd08a] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#f59e0b] via-[#ea8a0d] to-[#8068fb] bg-clip-text text-transparent">
                   {bn ? "সহজ ও নিরাপদ" : "simple and safe"}
                 </span>
               </h1>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
                 {bn
                   ? "ফটো ও স্টুডিও এডিট, এআই ডকুমেন্ট, প্রিন্ট মিডিয়া, প্রশ্ন তৈরি ও ৮০+ ফ্রি টুল — সব এক জায়গায়।"
                   : "Photo and studio editing, AI documents, print media, question papers and 80+ free tools — all in one place."}
@@ -138,25 +134,25 @@ export default async function HomePage() {
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link
                   href="/tools/photo"
-                  className="btn btn-primary shadow-[0_12px_30px_-8px_rgba(245,158,11,0.65)] transition hover:shadow-[0_16px_38px_-8px_rgba(245,158,11,0.8)]"
+                  className="btn btn-primary shadow-[0_14px_34px_-14px_rgba(245,158,11,0.85)] transition hover:-translate-y-0.5 hover:shadow-[0_20px_44px_-14px_rgba(245,158,11,0.9)]"
                 >
                   {bn ? "এখনই শুরু করুন" : "Start now"} <ArrowRight size={16} />
                 </Link>
                 <Link
                   href="/tools"
-                  className="btn border border-white/25 bg-white/10 text-white hover:bg-white/20"
+                  className="btn border border-white/80 bg-white/55 text-fg shadow-[0_10px_26px_-20px_rgba(29,27,49,0.6)] backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/80"
                 >
                   <Play size={15} /> {bn ? "লাইভ ডেমো দেখুন" : "See live demo"}
                 </Link>
               </div>
-              <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/70">
+              <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted">
                 {[
                   bn ? "এক ক্লিকেই ফটো এডিট" : "Photo edit in one click",
                   bn ? "এক জায়গায় সব টুল" : "All tools in one place",
                   bn ? "সময় বাঁচবে, ঝামেলা কমবে" : "Save time, less hassle",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-1.5">
-                    <BadgeCheck size={14} className="text-[#ffd08a]" /> {item}
+                    <BadgeCheck size={14} className="text-royal" /> {item}
                   </li>
                 ))}
               </ul>
@@ -164,19 +160,19 @@ export default async function HomePage() {
 
             <div className="relative mx-auto w-full max-w-md">
               <div
-                className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#f59e0b]/30 via-transparent to-[#8068fb]/30 blur-xl"
+                className="absolute -inset-4 rounded-[2.4rem] bg-gradient-to-br from-[#f59e0b]/25 via-white/10 to-[#8068fb]/25 blur-2xl"
                 aria-hidden="true"
               />
-              <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white/10 shadow-2xl backdrop-blur-xl">
-                <div className="flex items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
+              <div className="relative overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/55 shadow-[0_36px_90px_-48px_rgba(29,27,49,0.55)] backdrop-blur-2xl backdrop-saturate-150">
+                <div className="flex items-center justify-between gap-3 border-b border-white/60 px-5 py-4">
                   <div>
-                    <p className="text-sm font-bold text-white">{bn ? "এক নজরে আমাদের সেবা" : "Our services at a glance"}</p>
-                    <p className="text-[0.7rem] text-white/60">
+                    <p className="text-sm font-bold text-fg">{bn ? "এক নজরে আমাদের সেবা" : "Our services at a glance"}</p>
+                    <p className="text-[0.7rem] text-muted">
                       {bn ? "দোকানের প্রতিদিনের সব কাজ এক প্ল্যাটফর্মে" : "Every daily shop task on one platform"}
                     </p>
                   </div>
                   <img
-                    src="/brand/logo-mark.png"
+                    src="/brand/hawa-icon.png"
                     alt=""
                     width={40}
                     height={40}
@@ -194,26 +190,26 @@ export default async function HomePage() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="group rounded-2xl border border-white/10 bg-white/[0.04] p-3 transition hover:border-[#f59e0b]/50 hover:bg-white/[0.09]"
+                      className="group rounded-2xl border border-white/70 bg-white/45 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-royal/40 hover:bg-white/85 hover:shadow-[0_18px_36px_-26px_rgba(29,27,49,0.6)]"
                     >
-                      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#f59e0b]/15 text-[#ffc46b]">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-royal/12 text-royal">
                         <item.Icon size={17} />
                       </span>
-                      <p className="mt-2 text-xs font-semibold text-white">{bn ? item.bn : item.en}</p>
-                      <p className="mt-0.5 text-[0.65rem] leading-snug text-white/55">{bn ? item.noteBn : item.noteEn}</p>
+                      <p className="mt-2 text-xs font-semibold text-fg">{bn ? item.bn : item.en}</p>
+                      <p className="mt-0.5 text-[0.65rem] leading-snug text-muted">{bn ? item.noteBn : item.noteEn}</p>
                     </Link>
                   ))}
                 </div>
 
-                <div className="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10 bg-white/[0.06]">
+                <div className="grid grid-cols-3 divide-x divide-white/60 border-t border-white/60 bg-white/35">
                   {[
                     { value: "80+", bn: "ফ্রি টুল", en: "free tools" },
                     { value: "10+", bn: "বছরের অভিজ্ঞতা", en: "years" },
                     { value: "24/7", bn: "অনলাইন সেবা", en: "online" },
                   ].map((chip) => (
                     <div key={chip.en} className="px-2 py-3 text-center">
-                      <p className="text-base font-extrabold text-[#ffb44d]">{chip.value}</p>
-                      <p className="text-[0.62rem] font-medium text-white/60">{bn ? chip.bn : chip.en}</p>
+                      <p className="text-base font-extrabold text-royal">{chip.value}</p>
+                      <p className="text-[0.62rem] font-medium text-muted">{bn ? chip.bn : chip.en}</p>
                     </div>
                   ))}
                 </div>
@@ -223,10 +219,13 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <div className="border-b border-line bg-surface">
-        <div className="container-page grid grid-cols-2 divide-x divide-line sm:grid-cols-4">
+      <div className="container-page pb-2">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {stats.map((stat) => (
-            <div key={stat.label} className="px-4 py-5 text-center sm:px-6">
+            <div
+              key={stat.label}
+              className="card-hover rounded-2xl border border-white/70 bg-white/55 px-4 py-4 text-center shadow-[0_18px_40px_-32px_rgba(29,27,49,0.55)] backdrop-blur-md sm:px-6"
+            >
               <p className="text-xl font-bold text-royal sm:text-2xl">{stat.value}</p>
               <p className="mt-1 text-[0.7rem] uppercase tracking-wide text-muted">{stat.label}</p>
             </div>
@@ -280,7 +279,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-line bg-surface py-12 sm:py-16">
+      <section className="py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading
             eyebrow={bn ? "আবেদন" : "Applications"}
@@ -333,7 +332,7 @@ export default async function HomePage() {
       </section>
 
       {products.length > 0 ? (
-        <section className="border-y border-line bg-surface py-12 sm:py-16">
+        <section className="py-12 sm:py-16">
           <div className="container-page">
             <SectionHeading
               eyebrow={bn ? "শপ" : "Shop"}
@@ -394,7 +393,7 @@ export default async function HomePage() {
         </section>
       ) : null}
 
-      <section className="border-y border-line bg-navy py-12 text-white sm:py-16">
+      <section className="py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading
             eyebrow={bn ? "প্রক্রিয়া" : "Process"}
@@ -403,12 +402,15 @@ export default async function HomePage() {
           />
           <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, i) => (
-              <li key={step.title} className="rounded-2xl border border-white/12 bg-white/5 p-5">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cyan/15 text-sm font-bold text-cyan">
+              <li
+                key={step.title}
+                className="card-hover rounded-2xl border border-white/70 bg-white/55 p-5 shadow-[0_20px_44px_-36px_rgba(29,27,49,0.55)] backdrop-blur-md"
+              >
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-royal/12 text-sm font-bold text-royal">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-3 text-sm font-semibold">{step.title}</h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-white/65">{step.body}</p>
+                <p className="mt-1.5 text-xs leading-relaxed text-muted">{step.body}</p>
               </li>
             ))}
           </ol>
@@ -435,7 +437,7 @@ export default async function HomePage() {
       </section>
 
       {testimonials.length > 0 ? (
-        <section className="border-y border-line bg-surface py-12 sm:py-16">
+        <section className="py-12 sm:py-16">
           <div className="container-page">
             <SectionHeading
               eyebrow={bn ? "মতামত" : "Reviews"}
@@ -451,7 +453,7 @@ export default async function HomePage() {
         </section>
       ) : null}
 
-      <section className="border-y border-line bg-surface py-12 sm:py-16">
+      <section className="py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading
             eyebrow={bn ? "কাদের জন্য" : "Who it is for"}

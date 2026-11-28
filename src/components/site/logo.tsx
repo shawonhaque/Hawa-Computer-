@@ -17,11 +17,11 @@ export function Logo({
   return (
     <Link href={href} className={cn("group flex items-center gap-2.5", className)} aria-label={name}>
       <img
-        src="/brand/logo-mark.png"
+        src="/brand/hawa-icon.png"
         alt=""
-        width={694}
-        height={470}
-        className="h-10 w-auto shrink-0 rounded-lg object-contain sm:h-11"
+        width={242}
+        height={170}
+        className="h-10 w-auto shrink-0 object-contain drop-shadow-[0_4px_10px_rgba(29,27,49,0.12)] sm:h-11"
       />
       {compact ? null : (
         <span className="leading-tight">
