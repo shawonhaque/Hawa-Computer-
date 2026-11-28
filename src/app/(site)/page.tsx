@@ -125,9 +125,10 @@ export default async function HomePage() {
                 <Sparkles size={13} /> {bn ? "কম্পিউটার দোকান ও স্টুডিওর জন্য" : "Built for computer shops and studios"}
               </span>
               <h1 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-[2.9rem] sm:leading-[1.15]">
-                {bn
-                  ? "আপনার সব ডিজিটাল কাজ এক জায়গায়, সহজ ও নিরাপদ"
-                  : "Every digital job in one place, simple and safe"}
+                {bn ? "আপনার সব ডিজিটাল কাজ এক জায়গায়, " : "Every digital job in one place, "}
+                <span className="bg-gradient-to-r from-[#ffb44d] via-[#f59e0b] to-[#ffd08a] bg-clip-text text-transparent">
+                  {bn ? "সহজ ও নিরাপদ" : "simple and safe"}
+                </span>
               </h1>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
                 {bn
@@ -135,7 +136,10 @@ export default async function HomePage() {
                   : "Photo and studio editing, AI documents, print media, question papers and 80+ free tools — all in one place."}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Link href="/tools/photo" className="btn btn-primary">
+                <Link
+                  href="/tools/photo"
+                  className="btn btn-primary shadow-[0_12px_30px_-8px_rgba(245,158,11,0.65)] transition hover:shadow-[0_16px_38px_-8px_rgba(245,158,11,0.8)]"
+                >
                   {bn ? "এখনই শুরু করুন" : "Start now"} <ArrowRight size={16} />
                 </Link>
                 <Link
@@ -163,23 +167,53 @@ export default async function HomePage() {
                 className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#f59e0b]/30 via-transparent to-[#8068fb]/30 blur-xl"
                 aria-hidden="true"
               />
-              <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white shadow-2xl">
-                <img
-                  src="/brand/logo-full.png"
-                  alt={bn ? "হাওয়া কম্পিউটার লোগো" : "Hawa Computer logo"}
-                  className="h-auto w-full object-contain"
-                  width={1024}
-                  height={1024}
-                />
-                <div className="grid grid-cols-3 divide-x divide-line border-t border-line text-center">
+              <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white/10 shadow-2xl backdrop-blur-xl">
+                <div className="flex items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
+                  <div>
+                    <p className="text-sm font-bold text-white">{bn ? "এক নজরে আমাদের সেবা" : "Our services at a glance"}</p>
+                    <p className="text-[0.7rem] text-white/60">
+                      {bn ? "দোকানের প্রতিদিনের সব কাজ এক প্ল্যাটফর্মে" : "Every daily shop task on one platform"}
+                    </p>
+                  </div>
+                  <img
+                    src="/brand/logo-mark.png"
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="h-9 w-9 shrink-0 object-contain"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 p-3">
                   {[
-                    { value: "80+", label: bn ? "ফ্রি টুল" : "free tools" },
-                    { value: "10+", label: bn ? "বছরের অভিজ্ঞতা" : "years" },
-                    { value: "24/7", label: bn ? "অনলাইন সেবা" : "online" },
+                    { href: "/tools/photo", Icon: Camera, bn: "ফটো স্টুডিও", en: "Photo studio", noteBn: "পাসপোর্ট, ব্যাকগ্রাউন্ড", noteEn: "Passport, background" },
+                    { href: "/tools", Icon: FileText, bn: "এআই ডকুমেন্ট", en: "AI document", noteBn: "সিভি, আবেদনপত্র", noteEn: "CV, applications" },
+                    { href: "/applications", Icon: BadgeCheck, bn: "অনলাইন আবেদন", en: "Online applications", noteBn: "পাসপোর্ট, এনআইডি", noteEn: "Passport, NID" },
+                    { href: "/tools", Icon: Sparkles, bn: "৮০+ ফ্রি টুলস", en: "80+ free tools", noteBn: "PDF, ইমেজ, ভিডিও", noteEn: "PDF, image, video" },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="group rounded-2xl border border-white/10 bg-white/[0.04] p-3 transition hover:border-[#f59e0b]/50 hover:bg-white/[0.09]"
+                    >
+                      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#f59e0b]/15 text-[#ffc46b]">
+                        <item.Icon size={17} />
+                      </span>
+                      <p className="mt-2 text-xs font-semibold text-white">{bn ? item.bn : item.en}</p>
+                      <p className="mt-0.5 text-[0.65rem] leading-snug text-white/55">{bn ? item.noteBn : item.noteEn}</p>
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10 bg-white/[0.06]">
+                  {[
+                    { value: "80+", bn: "ফ্রি টুল", en: "free tools" },
+                    { value: "10+", bn: "বছরের অভিজ্ঞতা", en: "years" },
+                    { value: "24/7", bn: "অনলাইন সেবা", en: "online" },
                   ].map((chip) => (
-                    <div key={chip.label} className="px-2 py-3">
-                      <p className="text-base font-extrabold text-royal">{chip.value}</p>
-                      <p className="text-[0.65rem] font-medium text-muted">{chip.label}</p>
+                    <div key={chip.en} className="px-2 py-3 text-center">
+                      <p className="text-base font-extrabold text-[#ffb44d]">{chip.value}</p>
+                      <p className="text-[0.62rem] font-medium text-white/60">{bn ? chip.bn : chip.en}</p>
                     </div>
                   ))}
                 </div>
