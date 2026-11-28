@@ -3,9 +3,13 @@ import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
+  Camera,
   Clock,
+  FileText,
+  Keyboard,
   MessageCircle,
   Package,
+  Printer,
   ShieldCheck,
   Sparkles,
   Users,
@@ -158,17 +162,19 @@ export default async function HomePage() {
       <section className="container-page py-8">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { href: "/tools/photo", icon: "📸", bn: "ফটো এডিটর", en: "Photo editor", noteBn: "পাসপোর্ট সাইজ, এক ক্লিকে", noteEn: "Passport size in one click" },
-            { href: "/services/bangla-typing", icon: "⌨️", bn: "টাইপিং", en: "Typing", noteBn: "বাংলা ও ইংরেজি", noteEn: "Bangla and English" },
-            { href: "/applications", icon: "📝", bn: "অনলাইন আবেদন", en: "Applications", noteBn: "পাসপোর্ট, এনআইডি, ভর্তি", noteEn: "Passport, NID, admission" },
-            { href: "/services/printing-photocopy", icon: "🖨️", bn: "প্রিন্ট", en: "Print", noteBn: "প্রিন্ট, ফটোকপি, স্ক্যান", noteEn: "Print, copy, scan" },
+            { href: "/tools/photo", Icon: Camera, bn: "ফটো এডিটর", en: "Photo editor", noteBn: "পাসপোর্ট সাইজ, এক ক্লিকে", noteEn: "Passport size in one click" },
+            { href: "/services/bangla-typing", Icon: Keyboard, bn: "টাইপিং", en: "Typing", noteBn: "বাংলা ও ইংরেজি", noteEn: "Bangla and English" },
+            { href: "/applications", Icon: FileText, bn: "অনলাইন আবেদন", en: "Applications", noteBn: "পাসপোর্ট, এনআইডি, ভর্তি", noteEn: "Passport, NID, admission" },
+            { href: "/services/printing-photocopy", Icon: Printer, bn: "প্রিন্ট", en: "Print", noteBn: "প্রিন্ট, ফটোকপি, স্ক্যান", noteEn: "Print, copy, scan" },
           ].map((tool) => (
             <Link
               key={tool.href}
               href={tool.href}
               className="card flex items-center gap-3 p-4 transition hover:border-royal hover:shadow-md"
             >
-              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-royal-soft text-lg">{tool.icon}</span>
+              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-royal-soft text-royal">
+                <tool.Icon size={18} />
+              </span>
               <span className="min-w-0">
                 <span className="block text-sm font-bold">{bn ? tool.bn : tool.en}</span>
                 <span className="block truncate text-[0.72rem] text-muted">{bn ? tool.noteBn : tool.noteEn}</span>

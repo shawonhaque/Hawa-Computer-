@@ -84,13 +84,14 @@ export function Header({
           <Logo name={brand.name} tagline={brand.tagline} compact />
         </div>
 
-        <nav className="hidden flex-1 items-center justify-center gap-x-1 lg:flex" aria-label="Main">
-          {nav.map((item) => (
+        <nav className="hidden flex-1 items-center justify-center lg:flex" aria-label="Main">
+          {nav.map((item, index) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "rounded-full px-3 py-2 text-[0.9rem] font-semibold transition-colors",
+                "items-center whitespace-nowrap rounded-full px-2.5 py-2 text-[0.83rem] font-semibold transition-colors xl:px-3 xl:text-[0.875rem]",
+                index >= 6 && "hidden xl:inline-flex",
                 isActive(item.href)
                   ? "bg-royal-soft text-royal"
                   : "text-[#555] hover:bg-surface-2 hover:text-royal",
