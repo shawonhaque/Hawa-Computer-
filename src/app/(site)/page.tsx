@@ -174,9 +174,9 @@ export default async function HomePage() {
                   <img
                     src="/brand/hawa-icon.png"
                     alt=""
-                    width={40}
-                    height={40}
-                    className="h-9 w-9 shrink-0 object-contain"
+                    width={44}
+                    height={29}
+                    className="h-8 w-auto shrink-0 object-contain"
                   />
                 </div>
 

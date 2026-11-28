@@ -23,11 +23,11 @@ export function Footer({
       <div className="container-page grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <img
-            src="/brand/hawa-logo.jpg"
+            src="/brand/hawa-logo.png"
             alt={name}
-            width={1275}
-            height={846}
-            className="h-16 w-auto rounded-lg bg-white/80 object-contain p-1 shadow-[0_10px_26px_-22px_rgba(29,27,49,0.6)]"
+            width={560}
+            height={427}
+            className="h-20 w-auto object-contain drop-shadow-[0_10px_24px_rgba(29,27,49,0.18)]"
             loading="lazy"
           />
           <p className="mt-3 text-sm font-bold">{name}</p>

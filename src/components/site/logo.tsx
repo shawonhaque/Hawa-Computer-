@@ -19,8 +19,8 @@ export function Logo({
       <img
         src="/brand/hawa-icon.png"
         alt=""
-        width={242}
-        height={170}
+        width={320}
+        height={208}
         className="h-10 w-auto shrink-0 object-contain drop-shadow-[0_4px_10px_rgba(29,27,49,0.12)] sm:h-11"
       />
       {compact ? null : (
