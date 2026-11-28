@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { requireStaff } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { getLocale } from "@/lib/i18n";
@@ -9,6 +10,10 @@ import { DashboardSidebar } from "@/components/dashboard/sidebar";
 import { DashboardTopbar } from "@/components/dashboard/topbar";
 
 export const dynamic = "force-dynamic";
+
+// Signed-in views are not content: keep crawlers out and stop them competing with the
+// public pages for the same canonical.
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const user = await requireStaff();

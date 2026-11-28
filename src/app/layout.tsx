@@ -59,7 +59,10 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: { card: "summary_large_image", title, description, images: [ogImage] },
     robots: { index: true, follow: true },
     appleWebApp: { capable: true, title: name, statusBarStyle: "default" },
-    alternates: { canonical: "/" },
+    // "./" makes Next resolve the canonical against the route being rendered, so every
+    // page declares itself instead of inheriting the home page. A literal "/" would point
+    // all 80+ pages at the home page.
+    alternates: { canonical: "./" },
   };
 }
 
