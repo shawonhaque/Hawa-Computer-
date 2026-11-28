@@ -75,6 +75,27 @@ def crawl(cookie):
                     seen.add(p); queue.append(p)
     return pages
 
+SITE=(("https://"+DOMAIN) if DOMAIN else "https://shawonhaque.github.io"+BP).rstrip("/")
+
+def locale_head(P, is_en):
+    """Self-canonical plus hreflang pairs.
+
+    The app resolves "./" against its own route, so the /en mirror would claim the
+    Bengali page as canonical. Each locale is a real page for its reader, so it
+    declares itself and the pair points at each other.
+    """
+    bn = SITE + ("" if P == "/" else P)
+    en = SITE + "/en" + ("" if P == "/" else P)
+    if P == "/":
+        bn, en = bn + "/", en + "/"
+    self_url = en if is_en else bn
+    return (
+        '<link rel="canonical" href="%s"/>' % self_url
+        + '<link rel="alternate" hreflang="bn" href="%s"/>' % bn
+        + '<link rel="alternate" hreflang="en" href="%s"/>' % en
+        + '<link rel="alternate" hreflang="x-default" href="%s"/>' % bn
+    )
+
 def rewrite(body, P, is_en):
     def loc(m):
         if m.group(1)=="en": return 'href="%s/en"' % BP if P=="/" else 'href="%s/en%s"' % (BP,P)
@@ -89,6 +110,8 @@ def rewrite(body, P, is_en):
         if is_en: return '%s="%s/en"' % (attr,BP) if url=="/" else '%s="%s/en%s"' % (attr,BP,url)
         return '%s="%s%s"' % (attr,BP,url)
     s=re.sub(r'(href|action|src)="(/[^"]*)"', fix, s)
+    s=re.sub(r'<link rel="canonical"[^>]*/>', "", s, count=1)
+    s=s.replace("</head>", locale_head(P, is_en)+"</head>", 1)
     fix_script=(FIX_EN if is_en else FIX_BN).replace("__BP__", BP)
     return s.replace("</body>", fix_script+"</body>", 1)
 
@@ -113,7 +136,6 @@ for path in ("/icon.png","/apple-icon.png","/favicon.ico","/robots.txt"):
     except Exception as exc:
         print("extra skip", path, exc, flush=True)
 
-SITE=(("https://"+DOMAIN) if DOMAIN else "https://shawonhaque.github.io"+BP).rstrip("/")
 def fetch_text(path):
     req=urllib.request.Request(ORIGIN+path, headers={"User-Agent":"Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=20) as r:
