@@ -21,8 +21,9 @@ for _ in $(seq 1 10); do
   curl -sf -o /dev/null http://localhost:3001/ || break
   sleep 1
 done
-NEXT_PUBLIC_ASSET_PREFIX="$BASE_PATH" NEXT_PUBLIC_ROUTE_PREFIX="$BASE_PATH" NEXT_PUBLIC_STATIC_MODE=1 npx next build
-nohup env NEXT_PUBLIC_ASSET_PREFIX="$BASE_PATH" NEXT_PUBLIC_ROUTE_PREFIX="$BASE_PATH" NEXT_PUBLIC_STATIC_MODE=1 PORT=3001 npx next start -p 3001 > /tmp/hawa-static.log 2>&1 &
+NEXT_PUBLIC_SITE_URL="${NEXT_PUBLIC_SITE_URL:-https://shawonhaque.github.io$BASE_PATH}" \
+  NEXT_PUBLIC_ASSET_PREFIX="$BASE_PATH" NEXT_PUBLIC_ROUTE_PREFIX="$BASE_PATH" NEXT_PUBLIC_STATIC_MODE=1 npx next build
+nohup env NEXT_PUBLIC_SITE_URL="${NEXT_PUBLIC_SITE_URL:-https://shawonhaque.github.io$BASE_PATH}" NEXT_PUBLIC_ASSET_PREFIX="$BASE_PATH" NEXT_PUBLIC_ROUTE_PREFIX="$BASE_PATH" NEXT_PUBLIC_STATIC_MODE=1 PORT=3001 npx next start -p 3001 > /tmp/hawa-static.log 2>&1 &
 for _ in $(seq 1 30); do
   curl -sf -o /dev/null http://localhost:3001/ && break
   sleep 2

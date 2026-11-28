@@ -6,6 +6,7 @@ import { ToastProvider } from "@/components/ui/toast";
 import { Flash } from "@/components/ui/flash";
 import { getLocale } from "@/lib/i18n";
 import { getSettings, siteTitle } from "@/lib/settings";
+import { siteUrl } from "@/lib/site-url";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const bengali = Hind_Siliguri({
@@ -33,8 +34,15 @@ export async function generateMetadata(): Promise<Metadata> {
     ? "কম্পিউটার সেবা, অনলাইন আবেদন, পাসপোর্ট সহায়তা, ফটো স্টুডিও, ডকুমেন্ট প্রস্তুতি, স্টেশনারি, বই ও কম্পিউটার প্রশিক্ষণ — এক ঠিকানায়।"
     : "Computer services, online applications, passport assistance, photo studio, document preparation, stationery, books and computer training — all in one place.";
 
+  const ogImage = {
+    url: "/brand/og-cover.jpg",
+    width: 1200,
+    height: 630,
+    alt: name,
+  };
+
   return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+    metadataBase: new URL(siteUrl()),
     title: { default: title, template: `%s | ${name}` },
     description,
     keywords: bn
@@ -46,8 +54,9 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       locale: bn ? "bn_BD" : "en_US",
+      images: [ogImage],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: [ogImage] },
     robots: { index: true, follow: true },
     appleWebApp: { capable: true, title: name, statusBarStyle: "default" },
     alternates: { canonical: "/" },
