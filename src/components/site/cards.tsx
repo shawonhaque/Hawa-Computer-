@@ -1,10 +1,24 @@
 import Link from "next/link";
-import { ArrowRight, Clock, MapPin, Star } from "lucide-react";
+import {
+  ArrowRight,
+  Backpack,
+  BookOpen,
+  Clock,
+  Droplets,
+  Eraser,
+  MapPin,
+  NotebookPen,
+  Package,
+  PenTool,
+  Scissors,
+  Star,
+} from "lucide-react";
 import { AddToCart } from "@/components/ui/add-to-cart";
 import { Badge } from "@/components/ui/badge";
 import { Icon } from "@/components/ui/icon";
 import { formatDate, formatTaka } from "@/lib/utils";
 import { pick, type Locale } from "@/lib/dictionaries";
+import { cn } from "@/lib/utils";
 
 type Bilingual = Record<string, unknown>;
 
@@ -49,6 +63,21 @@ export function ServiceCard({
   );
 }
 
+
+const thumbThemes: { match: RegExp; Icon: typeof Package; tint: string }[] = [
+  { match: /notebook|khata|diary|copy|paper|chart|hardboard/i, Icon: NotebookPen, tint: "from-[#f59e0b]/18 via-[#fde68a]/10 to-transparent" },
+  { match: /pen|marker|pencil|sharpener/i, Icon: PenTool, tint: "from-[#8068fb]/18 via-[#c4b5fd]/10 to-transparent" },
+  { match: /eraser/i, Icon: Eraser, tint: "from-[#38bdf8]/18 via-[#bae6fd]/10 to-transparent" },
+  { match: /scissors|stapler|folder|file/i, Icon: Scissors, tint: "from-[#0ea5e9]/16 via-[#e0f2fe]/10 to-transparent" },
+  { match: /bag/i, Icon: Backpack, tint: "from-[#22c55e]/16 via-[#dcfce7]/10 to-transparent" },
+  { match: /bottle|water/i, Icon: Droplets, tint: "from-[#06b6d4]/16 via-[#cffafe]/10 to-transparent" },
+  { match: /book/i, Icon: BookOpen, tint: "from-[#f97316]/16 via-[#ffedd5]/10 to-transparent" },
+];
+
+function productTheme(slug: string) {
+  return thumbThemes.find((theme) => theme.match.test(slug)) ?? { Icon: Package, tint: "from-royal/16 via-transparent to-cyan/10" };
+}
+
 export function ProductCard({
   product,
   locale,
@@ -78,8 +107,19 @@ export function ProductCard({
           // eslint-disable-next-line @next/next/no-img-element
           <img src={image} alt={name} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
         ) : (
-          <span className="flex h-full w-full items-center justify-center bg-gradient-to-br from-royal/10 via-transparent to-cyan/10 text-royal/60">
-            <Icon name="Package" size={38} />
+          <span className={cn("relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br", productTheme(product.slug).tint)}>
+            <span aria-hidden="true" className="absolute -right-6 -top-8 size-24 rounded-full bg-white/40 blur-xl" />
+            <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-10 bg-[repeating-linear-gradient(45deg,rgba(29,27,49,0.05)_0_2px,transparent_2px_9px)]" />
+            {(() => {
+              const ThumbIcon = productTheme(product.slug).Icon;
+              return (
+                <ThumbIcon
+                  size={44}
+                  strokeWidth={1.4}
+                  className="relative text-royal/70 transition duration-300 group-hover:scale-110"
+                />
+              );
+            })()}
           </span>
         )}
         {product.stock <= 0 ? (
@@ -126,8 +166,18 @@ export function CourseCard({
 }) {
   return (
     <Link href={`/training/${course.slug}`} className="card card-hover group flex h-full flex-col overflow-hidden">
-      <div className="relative flex aspect-[16/9] items-center justify-center bg-gradient-to-br from-navy via-[#1d3b62] to-[#0e7490]">
-        <Icon name="Laptop" size={34} className="text-white/80" />
+      <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden bg-gradient-to-br from-navy via-[#1d3b62] to-[#0e7490]">
+        {course.coverUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={course.coverUrl} alt="" className="absolute inset-0 h-full w-full object-cover opacity-90" loading="lazy" />
+        ) : (
+          <>
+            <span aria-hidden="true" className="absolute -left-10 top-4 size-28 rounded-full bg-[#f59e0b]/25 blur-2xl" />
+            <span aria-hidden="true" className="absolute -bottom-8 right-2 size-24 rounded-full bg-cyan-400/25 blur-2xl" />
+            <span aria-hidden="true" className="absolute inset-0 bg-[repeating-linear-gradient(120deg,rgba(255,255,255,0.07)_0_1px,transparent_1px_14px)]" />
+            <Icon name="Laptop" size={36} className="relative text-white/85" />
+          </>
+        )}
         <span className="absolute right-2 top-2 rounded-full bg-white/15 px-2 py-0.5 text-[0.65rem] font-semibold text-white backdrop-blur">
           {course.level}
         </span>

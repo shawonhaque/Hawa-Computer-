@@ -60,7 +60,10 @@ export function Header({
   const [open, setOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const accountRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const [pill, setPill] = useState({ left: 0, width: 0, visible: false });
 
   useEffect(() => {
     setOpen(false);
@@ -81,24 +84,77 @@ export function Header({
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
+  function movePillTo(element: HTMLElement | null) {
+    const nav = navRef.current;
+    if (!nav || !element) {
+      setPill((current) => ({ ...current, visible: false }));
+      return;
+    }
+    const navBox = nav.getBoundingClientRect();
+    const box = element.getBoundingClientRect();
+    setPill({ left: box.left - navBox.left, width: box.width, visible: true });
+  }
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    movePillTo(navRef.current?.querySelector<HTMLElement>('[data-active="true"]') ?? null);
+    const onResize = () =>
+      movePillTo(navRef.current?.querySelector<HTMLElement>('[data-active="true"]') ?? null);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [pathname]);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-[#ececf1] bg-white/95 backdrop-blur-md">
-      <div className="container-page flex h-[68px] items-center gap-3 lg:h-[78px]">
-        <div className="shrink-0">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b transition-[background-color,box-shadow,border-color,backdrop-filter] duration-300",
+        scrolled
+          ? "border-white/60 bg-white/70 shadow-[0_10px_30px_-18px_rgba(29,27,49,0.45)] backdrop-blur-xl backdrop-saturate-150"
+          : "border-[#ececf1] bg-white/95 backdrop-blur-md",
+      )}
+    >
+      <div
+        className={cn(
+          "container-page grid grid-cols-[auto_1fr_auto] items-center gap-x-2 transition-[padding] duration-300",
+          scrolled ? "py-1.5 lg:py-2" : "py-2 lg:py-3",
+        )}
+      >
+        <div className="col-start-1 row-start-1 shrink-0">
           <Logo name={brand.name} tagline={brand.tagline} />
         </div>
 
-        <nav className="hidden flex-1 items-center justify-center lg:flex" aria-label="Main">
-          {nav.map((item, index) => (
+        <nav
+          ref={navRef}
+          onMouseLeave={() =>
+            movePillTo(navRef.current?.querySelector<HTMLElement>('[data-active="true"]') ?? null)
+          }
+          className="relative col-span-3 row-start-2 hidden min-w-0 items-center justify-center gap-x-0.5 lg:flex lg:border-t lg:border-[#ececf1]/70 lg:pb-0.5 lg:pt-1.5"
+          aria-label="Main"
+        >
+          <span
+            aria-hidden="true"
+            className={cn(
+              "pointer-events-none absolute inset-y-1 left-0 rounded-full bg-royal-soft/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-sm transition-all duration-300 ease-out",
+              pill.visible ? "opacity-100" : "opacity-0",
+            )}
+            style={{ width: pill.width, transform: `translateX(${pill.left}px)` }}
+          />
+          {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
+              data-active={isActive(item.href) ? "true" : "false"}
+              onMouseEnter={(event) => movePillTo(event.currentTarget)}
+              onFocus={(event) => movePillTo(event.currentTarget)}
               className={cn(
-                "items-center whitespace-nowrap rounded-full px-2.5 py-2 text-[0.83rem] font-semibold transition-colors xl:px-3 xl:text-[0.875rem]",
-                index >= 6 && "hidden xl:inline-flex",
-                isActive(item.href)
-                  ? "bg-royal-soft text-royal"
-                  : "text-[#555] hover:bg-surface-2 hover:text-royal",
+                "relative z-10 whitespace-nowrap rounded-full px-2.5 py-1.5 text-[0.8rem] font-semibold transition-colors duration-200 xl:px-3 xl:text-[0.84rem]",
+                isActive(item.href) ? "text-royal" : "text-[#555] hover:text-royal",
               )}
             >
               {item.label}
@@ -106,7 +162,7 @@ export function Header({
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-x-1.5 lg:ml-0">
+        <div className="col-start-3 row-start-1 flex shrink-0 items-center gap-x-1 justify-self-end">
           <button
             type="button"
             onClick={() => setSearchOpen((value) => !value)}
@@ -190,7 +246,7 @@ export function Header({
           ) : (
             <Link
               href="/login"
-              className="hidden items-center gap-1.5 rounded-full bg-[linear-gradient(135deg,#f59e0b,var(--royal))] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_8px_18px_-10px_rgba(217,119,6,0.9)] transition hover:brightness-105 sm:inline-flex lg:px-5"
+              className="hidden items-center gap-1.5 whitespace-nowrap rounded-full bg-[linear-gradient(135deg,#f59e0b,var(--royal))] px-3.5 py-2.5 text-[0.82rem] font-semibold text-white shadow-[0_8px_18px_-10px_rgba(217,119,6,0.9)] transition hover:brightness-105 sm:inline-flex lg:px-4 lg:text-sm"
             >
               <LogIn size={16} /> {labels.login}
             </Link>
@@ -209,7 +265,7 @@ export function Header({
       </div>
 
       {searchOpen ? (
-        <div className="border-t border-[#ececf1] bg-white">
+        <div className="border-t border-white/60 bg-white/70 backdrop-blur-xl">
           <div className="container-page py-3">
             <form action="/search" role="search">
               <div className="relative">

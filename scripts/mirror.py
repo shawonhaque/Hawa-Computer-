@@ -84,6 +84,8 @@ def rewrite(body, P, is_en):
         attr,url=m.group(1),m.group(2)
         if url.startswith(BP) or url.startswith("//"): return m.group(0)
         if url.startswith(ASSET) or attr=="src": return '%s="%s%s"' % (attr,BP,url)
+        if attr=="href" and re.search(r'\.(png|jpe?g|svg|webp|gif|ico|css|js|json|pdf|woff2?)$', url.split("?")[0], re.I):
+            return '%s="%s%s"' % (attr,BP,url)
         if is_en: return '%s="%s/en"' % (attr,BP) if url=="/" else '%s="%s/en%s"' % (attr,BP,url)
         return '%s="%s%s"' % (attr,BP,url)
     s=re.sub(r'(href|action|src)="(/[^"]*)"', fix, s)
@@ -101,6 +103,16 @@ for pages, root, is_en in ((bn, OUT, False), (en, os.path.join(OUT,"en"), True))
         open(target,"w",encoding="utf-8").write(rewrite(body, path, is_en))
 for src,dst in (("/tmp/hawa-static/.next/static", os.path.join(OUT,"_next/static")),("/tmp/hawa-static/public", OUT)):
     if os.path.isdir(src): shutil.copytree(src, dst, dirs_exist_ok=True)
+for path in ("/icon.png","/apple-icon.png","/favicon.ico","/robots.txt"):
+    try:
+        req=urllib.request.Request(ORIGIN+path, headers={"User-Agent":"Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            data=r.read()
+        with open(os.path.join(OUT, path.lstrip("/")),"wb") as fh:
+            fh.write(data)
+    except Exception as exc:
+        print("extra skip", path, exc, flush=True)
+
 open(os.path.join(OUT,".nojekyll"),"w").close()
 if DOMAIN:
     open(os.path.join(OUT,"CNAME"),"w").write(DOMAIN.strip()+"\n")

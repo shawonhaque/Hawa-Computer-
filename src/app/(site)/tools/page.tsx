@@ -34,7 +34,7 @@ const groups: { key: string; titleBn: string; titleEn: string; icon: typeof Came
       { label: "ভিসা সাইজ ছবি", href: "/services/visa-size-photo" },
       { label: "ছবি রিটাচিং", href: "/services/photo-retouching" },
       { label: "ডকুমেন্ট স্ক্যানিং", href: "/services/document-scanning" },
-      { label: "ফটো স্টুডিও প্যাকেজ", href: "/services/photo-studio" },
+      { label: "ফটো স্টুডিও প্যাকেজ", href: "/services/printing-photocopy" },
     ],
   },
   {
