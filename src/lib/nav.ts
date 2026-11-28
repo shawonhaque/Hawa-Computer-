@@ -4,6 +4,7 @@ export const publicNav = [
   { href: "/", key: "home" },
   { href: "/services", key: "services" },
   { href: "/applications", key: "applications" },
+  { href: "/tools", key: "tools" },
   { href: "/shop", key: "shop" },
   { href: "/library", key: "library" },
   { href: "/training", key: "training" },
