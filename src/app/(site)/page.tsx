@@ -117,7 +117,7 @@ export default async function HomePage() {
         <div className="container-page relative py-10 sm:py-14">
           <div className="grid items-center gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/60 px-3 py-1 text-xs font-semibold tracking-wide text-royal shadow-[0_8px_20px_-16px_rgba(29,27,49,0.5)] backdrop-blur-md">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/60 px-3 py-1 text-xs font-semibold tracking-wide text-royal shadow-[0_8px_20px_-16px_rgba(29,27,49,0.5)] backdrop-blur-md dark:border-white/10 dark:bg-white/5">
                 <Sparkles size={13} /> {bn ? "কম্পিউটার দোকান ও স্টুডিওর জন্য" : "Built for computer shops and studios"}
               </span>
               <h1 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-[2.9rem] sm:leading-[1.15]">
@@ -140,7 +140,7 @@ export default async function HomePage() {
                 </Link>
                 <Link
                   href="/tools"
-                  className="btn border border-white/80 bg-white/55 text-fg shadow-[0_10px_26px_-20px_rgba(29,27,49,0.6)] backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/80"
+                  className="btn border border-white/80 bg-white/55 text-fg shadow-[0_10px_26px_-20px_rgba(29,27,49,0.6)] backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/80 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
                 >
                   <Play size={15} /> {bn ? "লাইভ ডেমো দেখুন" : "See live demo"}
                 </Link>
@@ -163,7 +163,7 @@ export default async function HomePage() {
                 className="absolute -inset-4 rounded-[2.4rem] bg-gradient-to-br from-[#f59e0b]/25 via-white/10 to-[#8068fb]/25 blur-2xl"
                 aria-hidden="true"
               />
-              <div className="relative overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/55 shadow-[0_36px_90px_-48px_rgba(29,27,49,0.55)] backdrop-blur-2xl backdrop-saturate-150">
+              <div className="relative overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/55 shadow-[0_36px_90px_-48px_rgba(29,27,49,0.55)] backdrop-blur-2xl backdrop-saturate-150 dark:border-white/10 dark:bg-[#0e1725]/85">
                 <div className="flex items-center justify-between gap-3 border-b border-white/60 px-5 py-4">
                   <div>
                     <p className="text-sm font-bold text-fg">{bn ? "এক নজরে আমাদের সেবা" : "Our services at a glance"}</p>
@@ -190,7 +190,7 @@ export default async function HomePage() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="group rounded-2xl border border-white/70 bg-white/45 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-royal/40 hover:bg-white/85 hover:shadow-[0_18px_36px_-26px_rgba(29,27,49,0.6)]"
+                      className="group rounded-2xl border border-white/70 bg-white/45 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-royal/40 hover:bg-white/85 hover:shadow-[0_18px_36px_-26px_rgba(29,27,49,0.6)] dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
                     >
                       <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-royal/12 text-royal">
                         <item.Icon size={17} />
@@ -201,7 +201,7 @@ export default async function HomePage() {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-3 divide-x divide-white/60 border-t border-white/60 bg-white/35">
+                <div className="grid grid-cols-3 divide-x divide-white/60 border-t border-white/60 bg-white/35 dark:divide-white/10 dark:border-white/10 dark:bg-white/5">
                   {[
                     { value: "80+", bn: "ফ্রি টুল", en: "free tools" },
                     { value: "10+", bn: "বছরের অভিজ্ঞতা", en: "years" },
@@ -224,7 +224,7 @@ export default async function HomePage() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="card-hover rounded-2xl border border-white/70 bg-white/55 px-4 py-4 text-center shadow-[0_18px_40px_-32px_rgba(29,27,49,0.55)] backdrop-blur-md sm:px-6"
+              className="card-hover rounded-2xl border border-white/70 bg-white/55 px-4 py-4 text-center shadow-[0_18px_40px_-32px_rgba(29,27,49,0.55)] backdrop-blur-md dark:border-white/10 dark:bg-white/5 sm:px-6"
             >
               <p className="text-xl font-bold text-royal sm:text-2xl">{stat.value}</p>
               <p className="mt-1 text-[0.7rem] uppercase tracking-wide text-muted">{stat.label}</p>
@@ -233,7 +233,7 @@ export default async function HomePage() {
         </div>
       </div>
 
-      <section className="container-page py-8">
+      <section data-reveal className="container-page py-8">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { href: "/tools/photo", Icon: Camera, bn: "ফটো এডিটর", en: "Photo editor", noteBn: "পাসপোর্ট সাইজ, এক ক্লিকে", noteEn: "Passport size in one click" },
@@ -258,7 +258,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="container-page py-12 sm:py-16">
+      <section data-reveal className="container-page py-12 sm:py-16">
         <SectionHeading
           eyebrow={bn ? "সেবা" : "Services"}
           title={d.home.popularServices}
@@ -279,7 +279,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16">
+      <section data-reveal className="py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading
             eyebrow={bn ? "আবেদন" : "Applications"}
@@ -306,7 +306,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="container-page py-12 sm:py-16">
+      <section data-reveal className="container-page py-12 sm:py-16">
         <SectionHeading
           eyebrow={bn ? "স্টুডিও ও ডকুমেন্ট" : "Studio & documents"}
           title={d.home.photoStudio}
@@ -332,7 +332,7 @@ export default async function HomePage() {
       </section>
 
       {products.length > 0 ? (
-        <section className="py-12 sm:py-16">
+        <section data-reveal className="py-12 sm:py-16">
           <div className="container-page">
             <SectionHeading
               eyebrow={bn ? "শপ" : "Shop"}
@@ -365,7 +365,7 @@ export default async function HomePage() {
       ) : null}
 
       {courses.length > 0 ? (
-        <section className="container-page py-12 sm:py-16">
+        <section data-reveal className="container-page py-12 sm:py-16">
           <SectionHeading
             eyebrow={bn ? "প্রশিক্ষণ" : "Training"}
             title={d.home.latestCourses}
@@ -393,7 +393,7 @@ export default async function HomePage() {
         </section>
       ) : null}
 
-      <section className="py-12 sm:py-16">
+      <section data-reveal className="py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading
             eyebrow={bn ? "প্রক্রিয়া" : "Process"}
@@ -404,7 +404,7 @@ export default async function HomePage() {
             {steps.map((step, i) => (
               <li
                 key={step.title}
-                className="card-hover rounded-2xl border border-white/70 bg-white/55 p-5 shadow-[0_20px_44px_-36px_rgba(29,27,49,0.55)] backdrop-blur-md"
+                className="card-hover rounded-2xl border border-white/70 bg-white/55 p-5 shadow-[0_20px_44px_-36px_rgba(29,27,49,0.55)] backdrop-blur-md dark:border-white/10 dark:bg-white/5"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-royal/12 text-sm font-bold text-royal">
                   {String(i + 1).padStart(2, "0")}
@@ -417,7 +417,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="container-page py-12 sm:py-16">
+      <section data-reveal className="container-page py-12 sm:py-16">
         <SectionHeading
           eyebrow={bn ? "কেন আমরা" : "Why us"}
           title={d.home.whyUs}
@@ -437,7 +437,7 @@ export default async function HomePage() {
       </section>
 
       {testimonials.length > 0 ? (
-        <section className="py-12 sm:py-16">
+        <section data-reveal className="py-12 sm:py-16">
           <div className="container-page">
             <SectionHeading
               eyebrow={bn ? "মতামত" : "Reviews"}
@@ -453,7 +453,7 @@ export default async function HomePage() {
         </section>
       ) : null}
 
-      <section className="py-12 sm:py-16">
+      <section data-reveal className="py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading
             eyebrow={bn ? "কাদের জন্য" : "Who it is for"}
@@ -524,7 +524,7 @@ export default async function HomePage() {
       </section>
 
       {faqs.length > 0 ? (
-        <section className="container-page pb-12 sm:pb-16">
+        <section data-reveal className="container-page pb-12 sm:pb-16">
           <SectionHeading
             eyebrow={bn ? "প্রশ্নোত্তর" : "FAQ"}
             title={d.home.faq}
@@ -554,7 +554,7 @@ export default async function HomePage() {
         </section>
       ) : null}
 
-      <section className="container-page py-12 sm:py-16">
+      <section data-reveal className="container-page py-12 sm:py-16">
         <div className="card flex flex-col items-start gap-6 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
           <div className="max-w-xl">
             <h2 className="text-xl font-bold tracking-tight sm:text-2xl">{d.home.contactTitle}</h2>

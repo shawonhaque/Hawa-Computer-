@@ -1,9 +1,11 @@
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
-import { WhatsAppFloat } from "@/components/site/whatsapp-float";
+import { FloatingActions } from "@/components/site/floating-actions";
+import { SiteLoader } from "@/components/site/site-loader";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { getSessionUser } from "@/lib/auth";
 import { getDict, type Locale } from "@/lib/dictionaries";
-import { publicNav } from "@/lib/nav";
+import { getMenu } from "@/lib/menu";
 import { getSettings } from "@/lib/settings";
 import { getLocale } from "@/lib/i18n";
 
@@ -13,49 +15,17 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
   const settings = await getSettings();
   const user = await getSessionUser();
   const bn = locale === "bn";
-
-  const nav = publicNav.map((item) => ({
-    href: item.href,
-    label: d.nav[item.key as keyof typeof d.nav],
-  }));
-
-  const announcements = bn
-    ? [
-        "পাসপোর্ট সাইজ ছবি এক ক্লিকে — ফটো এডিটর চালু",
-        "প্রিন্ট, ফটোকপি, স্ক্যান একই ছাদের নিচে",
-        "অনলাইন আবেদন: পাসপোর্ট, এনআইডি, জন্ম নিবন্ধন, ভর্তি",
-        "শনি–বৃহস্পতি, সকাল ৯টা – রাত ৯টা",
-      ]
-    : [
-        "Passport size photo in one click — photo editor is live",
-        "Print, photocopy and scanning under one roof",
-        "Online applications: passport, NID, birth registration, admission",
-        "Saturday–Thursday, 9am – 9pm",
-      ];
+  const { groups, search } = await getMenu(locale);
 
   return (
     <div className="flex min-h-dvh flex-col">
-      <div className="overflow-hidden border-b border-[#ffe6bf] bg-[#fff6e9]">
-        <div className="container-page flex h-9 items-center gap-4 text-[0.72rem] font-medium text-[#7a5a1e]">
-          <div className="marquee min-w-0 flex-1">
-            <div className="marquee__track">
-              {[...announcements, ...announcements].map((item, index) => (
-                <span key={`${item}-${index}`} className="flex shrink-0 items-center gap-1.5">
-                  <span className="text-royal">✦</span> {item}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="hidden shrink-0 items-center gap-3 sm:flex">
-            <a href={`tel:${settings.phone}`} className="font-semibold text-royal hover:underline">{settings.phone}</a>
-            <a href="/track" className="hover:text-royal">{d.nav.track}</a>
-          </div>
-        </div>
-      </div>
+      <SiteLoader label={bn ? "লোড হচ্ছে…" : "Loading…"} />
+      <ScrollReveal />
 
       <Header
         locale={locale}
-        nav={nav}
+        groups={groups}
+        search={search}
         user={user ? { name: user.name, isStaff: user.role.isStaff } : null}
         brand={{
           name: bn ? settings.businessNameBn : settings.businessNameEn,
@@ -70,11 +40,17 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
           cart: d.common.cart,
           search: d.common.search,
           searchPlaceholder: d.common.searchPlaceholder,
+          noResults: bn ? "কিছু পাওয়া যায়নি" : "Nothing matched",
           menu: d.nav.home,
           language: d.common.language,
           theme: d.common.theme,
           dark: d.common.dark,
           light: d.common.light,
+          track: d.nav.track,
+          openNow: bn ? "এখন খোলা" : "Open now",
+          closedNow: bn ? "এখন বন্ধ" : "Closed now",
+          hours: bn ? settings.hoursBn : settings.hoursEn,
+          viewAll: bn ? "সব ফলাফল" : "All results",
         }}
       />
 
@@ -83,7 +59,15 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       </main>
 
       <Footer locale={locale} settings={settings} />
-      <WhatsAppFloat number={settings.whatsapp} label={d.nav.contact} />
+      <FloatingActions
+        phone={settings.phone}
+        whatsapp={settings.whatsapp}
+        labels={{
+          whatsapp: bn ? "হোয়াটসঅ্যাপে মেসেজ দিন" : "Message us on WhatsApp",
+          call: bn ? "ফোন করুন" : "Call us",
+          top: bn ? "উপরে যান" : "Back to top",
+        }}
+      />
     </div>
   );
 }

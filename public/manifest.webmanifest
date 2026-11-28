@@ -1,0 +1,22 @@
+{
+  "name": "হাওয়া কম্পিউটার — Hawa Computer",
+  "short_name": "Hawa Computer",
+  "description": "Computer services, online applications, photo studio, stationery and training in Kaikuri, Gazipur.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fdfcff",
+  "theme_color": "#2b3ad4",
+  "lang": "bn",
+  "icons": [
+    { "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "apple-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "favicon.ico", "sizes": "48x48", "type": "image/x-icon" }
+  ],
+  "shortcuts": [
+    { "name": "Order tracking", "url": "./track" },
+    { "name": "Shop", "url": "./shop" },
+    { "name": "Photo studio", "url": "./tools/photo" }
+  ]
+}

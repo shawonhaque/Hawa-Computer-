@@ -7,6 +7,7 @@ import { getDict, pick } from "@/lib/dictionaries";
 import { formatTaka } from "@/lib/utils";
 import { Breadcrumbs, PageHero } from "@/components/site/breadcrumbs";
 import { Icon } from "@/components/ui/icon";
+import { DocChecklist } from "@/components/site/doc-checklist";
 import { EmptyState } from "@/components/ui/primitives";
 
 export const dynamic = "force-dynamic";
@@ -71,13 +72,10 @@ export default async function ApplicationsPage() {
                   </span>
                   {pick<string>(items[0].category as never, "name", locale)}
                 </h2>
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <div data-reveal className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {items.map((service) => (
-                    <Link
-                      key={service.id}
-                      href={`/applications/${service.slug}`}
-                      className="card card-hover group flex h-full flex-col p-4"
-                    >
+                    <div key={service.id} className="card card-hover group flex h-full flex-col p-4">
+                      <Link href={`/applications/${service.slug}`} className="flex flex-1 flex-col">
                       <div className="flex items-start justify-between gap-2">
                         <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-royal/12 to-cyan/10 text-royal">
                           <Icon name={service.icon ?? "FileText"} size={17} />
@@ -90,15 +88,29 @@ export default async function ApplicationsPage() {
                       <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted">
                         {pick<string>(service as never, "summary", locale)}
                       </p>
-                      <div className="mt-auto flex items-center justify-between pt-3 text-[0.7rem] text-muted">
-                        <span className="flex items-center gap-1">
-                          <Clock size={11} /> {pick<string>(service as never, "processingTime", locale)}
-                        </span>
-                        <span className="inline-flex items-center gap-1 font-semibold text-royal">
-                          {d.common.applyNow} <ArrowRight size={12} />
-                        </span>
+                        <div className="mt-auto flex items-center justify-between pt-3 text-[0.7rem] text-muted">
+                          <span className="flex items-center gap-1">
+                            <Clock size={11} /> {pick<string>(service as never, "processingTime", locale)}
+                          </span>
+                          <span className="inline-flex items-center gap-1 font-semibold text-royal">
+                            {d.common.applyNow} <ArrowRight size={12} />
+                          </span>
+                        </div>
+                      </Link>
+                      <div className="mt-2 flex items-center justify-between gap-2 border-t border-line pt-2">
+                        <DocChecklist
+                          title={pick<string>(service as never, "name", locale)}
+                          documents={(service.documents as string[]) ?? []}
+                          label={bn ? "কী কী কাগজ লাগবে?" : "Documents needed?"}
+                          heading={bn ? "প্রয়োজনীয় কাগজপত্র" : "Required documents"}
+                          note={
+                            bn
+                              ? "কাগজপত্রের ছবি বা স্ক্যান আমাদের কাছে নিয়ে আসুন বা হোয়াটসঅ্যাপে পাঠান। মূল কপি সঙ্গে রাখলে ভালো।"
+                              : "Bring or WhatsApp us photos/scans of these documents. Originals help us verify details faster."
+                          }
+                        />
                       </div>
-                    </Link>
+                    </div>
                   ))}
                 </div>
               </section>

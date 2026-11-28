@@ -15,6 +15,7 @@ export type SiteSettings = {
   hoursBn: string;
   hoursEn: string;
   mapEmbedUrl: string;
+  mapUrl: string;
   facebook: string;
   deliveryInside: number;
   deliveryOutside: number;
@@ -32,11 +33,12 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   phone: process.env.BUSINESS_PHONE ?? "+8801342101686",
   whatsapp: process.env.BUSINESS_WHATSAPP ?? "8801342101686",
   email: process.env.BUSINESS_EMAIL ?? "hawacomputer2014@gmail.com",
-  addressBn: "প্রধান সড়ক, বাজার মোড়, বাংলাদেশ",
-  addressEn: "Main Road, Bazar Mor, Bangladesh",
+  addressBn: "JC66+FX2, কাইকুড়ি, গাজীপুর — ২৫.৬১১১৪১, ৮৯.৪১২৩৫৭",
+  addressEn: "JC66+FX2, Kaikuri, Gazipur — 25.611141, 89.412357",
   hoursBn: "শনি–বৃহস্পতি, সকাল ৯টা – রাত ৯টা",
   hoursEn: "Saturday – Thursday, 9am – 9pm",
-  mapEmbedUrl: "",
+  mapEmbedUrl: "https://maps.google.com/maps?q=25.611141,89.412357&z=16&hl=bn&output=embed",
+  mapUrl: "https://www.google.com/maps?q=25.611141,89.412357",
   facebook: "",
   deliveryInside: 60,
   deliveryOutside: 120,
