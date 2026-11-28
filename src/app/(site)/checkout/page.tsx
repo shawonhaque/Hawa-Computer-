@@ -33,7 +33,7 @@ export default async function CheckoutPage() {
           ]}
         />
         {STATIC_MODE ? (
-          <StaticCheckout en={!bn} delivery={settings.deliveryInside} />
+          <StaticCheckout en={!bn} delivery={settings.deliveryInside} whatsapp={settings.whatsapp} />
         ) : (
         <CheckoutForm
             locale={locale}

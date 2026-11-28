@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CheckCircle2, Loader2, LogIn, ShoppingBag } from "lucide-react";
+import { Check, CheckCircle2, Copy, Loader2, LogIn, MessageCircle, ShoppingBag } from "lucide-react";
 import { useCart } from "@/lib/cart";
 import { getSession, placeOrder, routePrefix } from "@/lib/local-auth";
 
@@ -12,11 +12,35 @@ const PAYMENTS = [
   { id: "nagad", bn: "নগদ", en: "Nagad" },
 ];
 
-export function StaticCheckout({ en, delivery = 0 }: { en: boolean; delivery?: number }) {
+function whatsappLink(number: string, text: string) {
+  const digits = number.replace(/\D/g, "");
+  return `https://wa.me/${digits}?text=${encodeURIComponent(text)}`;
+}
+
+export function StaticCheckout({
+  en,
+  delivery = 0,
+  whatsapp = "",
+}: {
+  en: boolean;
+  delivery?: number;
+  whatsapp?: string;
+}) {
   const { items, subtotal, ready, clear } = useCart();
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
-  const [done, setDone] = useState<string | null>(null);
+  const [done, setDone] = useState<{ code: string; message: string } | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const copySummary = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2200);
+    } catch {
+      setCopied(false);
+    }
+  };
   const session = typeof window !== "undefined" ? getSession() : null;
 
   if (done) {
@@ -25,10 +49,27 @@ export function StaticCheckout({ en, delivery = 0 }: { en: boolean; delivery?: n
         <CheckCircle2 size={40} className="mx-auto text-success" />
         <h2 className="mt-4 text-xl font-bold">{en ? "Order placed" : "অর্ডার সম্পন্ন হয়েছে"}</h2>
         <p className="mt-2 text-sm text-muted">
-          {en ? "Your order number is" : "আপনার অর্ডার নম্বর"} <strong className="text-royal">{done}</strong>
+          {en ? "Your order number is" : "আপনার অর্ডার নম্বর"} <strong className="text-royal">{done.code}</strong>
         </p>
         <div className="mt-6 grid gap-2">
-          <Link href={`/track?orderNo=${encodeURIComponent(done)}`} className="btn btn-primary justify-center">{en ? "Track this order" : "অর্ডার ট্র্যাক করুন"}</Link>
+          <p className="rounded-lg bg-warn/10 p-3 text-xs leading-relaxed text-warn">
+            {en
+              ? "This is the static preview, so the shop does not receive the order automatically. Send the summary on WhatsApp and we confirm it."
+              : "এটি স্ট্যাটিক প্রিভিউ — অর্ডারটি দোকানে অটোমেটিক পৌঁছে না। নিচের বাটনে WhatsApp-এ সারসংক্ষেপ পাঠালেই আমরা কনফার্ম করব।"}
+          </p>
+          <a
+            href={whatsappLink(whatsapp, done.message)}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-primary justify-center"
+          >
+            <MessageCircle size={16} /> {en ? "Send on WhatsApp" : "WhatsApp-এ পাঠান"}
+          </a>
+          <button type="button" onClick={() => copySummary(done.message)} className="btn btn-secondary justify-center">
+            {copied ? <Check size={15} className="text-success" /> : <Copy size={15} />}
+            {copied ? (en ? "Copied" : "কপি হয়েছে") : en ? "Copy the summary" : "সারসংক্ষেপ কপি করুন"}
+          </button>
+          <Link href={`/track?orderNo=${encodeURIComponent(done.code)}`} className="btn btn-secondary justify-center">{en ? "Track this order" : "অর্ডার ট্র্যাক করুন"}</Link>
           <Link href="/my-account" className="btn btn-secondary justify-center">{en ? "See my orders" : "আমার অর্ডার দেখুন"}</Link>
           <Link href="/shop" className="btn btn-secondary justify-center">{en ? "Continue shopping" : "আরও কেনাকাটা"}</Link>
         </div>
@@ -75,9 +116,25 @@ export function StaticCheckout({ en, delivery = 0 }: { en: boolean; delivery?: n
       note: String(data.get("note") || ""),
       payment: PAYMENTS.find((payment) => payment.id === method)?.[en ? "en" : "bn"] ?? method,
     });
+    const lines = [
+      `${en ? "New order" : "নতুন অর্ডার"} — ${order.code}`,
+      `${en ? "Name" : "নাম"}: ${name}`,
+      `${en ? "Mobile" : "মোবাইল"}: ${phone}`,
+      `${en ? "Address" : "ঠিকানা"}: ${address}`,
+      `${en ? "Payment" : "পেমেন্ট"}: ${PAYMENTS.find((payment) => payment.id === method)?.[en ? "en" : "bn"] ?? method}`,
+      "",
+      ...items.map((item) => `• ${item.name} × ${item.quantity} — ৳${item.price * item.quantity}`),
+      "",
+      `${en ? "Subtotal" : "সাবটোটাল"}: ৳${subtotal}`,
+      `${en ? "Delivery" : "ডেলিভারি"}: ৳${delivery}`,
+      `${en ? "Total" : "মোট"}: ৳${subtotal + delivery}`,
+    ];
+    const note = String(data.get("note") || "").trim();
+    if (note) lines.push("", `${en ? "Note" : "নোট"}: ${note}`);
+
     clear();
     setPending(false);
-    setDone(order.code);
+    setDone({ code: order.code, message: lines.join("\n") });
   }
 
   return (

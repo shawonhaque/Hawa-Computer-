@@ -106,7 +106,7 @@ export async function getMenu(locale: Locale): Promise<{ groups: MenuGroup[]; se
     ...products.map((p) => ({ href: `/shop/${p.slug}`, label: name(p), kind: bn ? "পণ্য" : "Product" })),
     ...categories.map((c) => ({ href: `/shop?category=${c.slug}`, label: name(c), kind: bn ? "ক্যাটাগরি" : "Category" })),
     { href: "/tools/photo", label: bn ? "ফটো এডিটর" : "Photo editor", kind: bn ? "টুল" : "Tool" },
-    { href: "/tools", label: bn ? "৮০+ ফ্রি টুলস" : "80+ free tools", kind: bn ? "টুল" : "Tool" },
+    { href: "/tools", label: bn ? "ফ্রি টুলস" : "Free tools", kind: bn ? "টুল" : "Tool" },
     { href: "/track", label: bn ? "অর্ডার ট্র্যাক" : "Order tracking", kind: bn ? "সহায়তা" : "Help" },
     { href: "/faq", label: bn ? "সাধারণ প্রশ্ন" : "FAQ", kind: bn ? "সহায়তা" : "Help" },
   ];

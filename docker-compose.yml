@@ -30,6 +30,16 @@ services:
       - "3000:3000"
     volumes:
       - uploads:/app/storage/uploads
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
 
   migrate:
     build: .
@@ -41,6 +51,25 @@ services:
       DATABASE_URL: postgresql://hawa:${POSTGRES_PASSWORD:-hawa_dev_password}@db:5432/hawa_computer?schema=public
     command: sh -c "npx prisma migrate deploy && npx tsx prisma/seed.ts"
 
+  # Optional TLS terminator: `docker compose --profile proxy up -d` with a real SITE_DOMAIN.
+  proxy:
+    image: caddy:2-alpine
+    profiles: ["proxy"]
+    restart: unless-stopped
+    depends_on:
+      - app
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN:-localhost}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
 volumes:
   db_data:
   uploads:
+  caddy_data:
+  caddy_config:

@@ -8,12 +8,15 @@ import {
   Check,
   ExternalLink,
   FileText,
+  ImageDown,
+  PenTool,
   Printer,
   Sparkles,
   Wrench,
 } from "lucide-react";
 import { PageHero } from "@/components/site/breadcrumbs";
 import { getLocale } from "@/lib/i18n";
+import { SITE_TOOLS } from "@/lib/tools";
 
 export const metadata: Metadata = {
   title: "টুলস ও প্যাকেজ | হাওয়া কম্পিউটার",
@@ -118,6 +121,8 @@ const importantLinks = [
   { label: "Ministry of Land", labelBn: "ভূমি মন্ত্রণালয়", href: "https://minland.gov.bd" },
 ];
 
+const TOOL_ICONS = { photo: Camera, pdf: FileText, image: ImageDown, signature: PenTool } as const;
+
 export default async function ToolsPage() {
   const locale = await getLocale();
   const bn = locale === "bn";
@@ -125,7 +130,7 @@ export default async function ToolsPage() {
   return (
     <>
       <PageHero
-        eyebrow={bn ? "সব টুল এক জায়গায়" : "All tools in one place"}
+        eyebrow={bn ? "ফ্রি টুলস" : "Free tools"}
         title={bn ? "আপনার সব ডিজিটাল কাজ, এক ঠিকানায়" : "All your digital work in one place"}
         description={
           bn
@@ -134,28 +139,28 @@ export default async function ToolsPage() {
         }
       />
 
-      <section className="container-page -mt-6 pb-2">
-        <Link
-          href="/tools/photo"
-          className="card flex flex-col gap-3 border-royal/30 bg-royal-soft/60 p-5 sm:flex-row sm:items-center sm:justify-between"
-        >
-          <div className="flex items-start gap-3">
-            <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-royal text-white">
-              <Camera size={20} />
-            </span>
-            <div>
-              <p className="text-sm font-bold">{bn ? "ফটো এডিটর — এখনই ব্যবহার করুন" : "Photo editor — use it now"}</p>
-              <p className="mt-0.5 text-xs text-muted">
-                {bn
-                  ? "ছবি আপলোড করে পাসপোর্ট / ভিসা / এনআইডি সাইজে ক্রপ করুন, আলো ঠিক করুন, ৪×৬ প্রিন্ট শিট নামিয়ে নিন।"
-                  : "Upload a photo, crop to passport / visa / NID size, fix the light and download a 4×6 print sheet."}
-              </p>
-            </div>
-          </div>
-          <span className="btn btn-primary btn-sm shrink-0">
-            {bn ? "খুলুন" : "Open"} <ArrowRight size={14} />
-          </span>
-        </Link>
+      <section id="tools" className="container-page -mt-6 pb-2">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {SITE_TOOLS.map((tool) => {
+            const Icon = TOOL_ICONS[tool.id];
+            return (
+              <Link
+                key={tool.id}
+                href={tool.href}
+                className="card group flex flex-col gap-2 border-royal/25 p-4 transition hover:-translate-y-0.5 hover:border-royal/50 hover:shadow-lg"
+              >
+                <span className="grid size-10 place-items-center rounded-xl bg-royal-soft text-royal">
+                  <Icon size={18} />
+                </span>
+                <p className="text-sm font-bold">{bn ? tool.bn : tool.en}</p>
+                <p className="text-xs leading-relaxed text-muted">{bn ? tool.noteBn : tool.noteEn}</p>
+                <span className="mt-auto inline-flex items-center gap-1 pt-1 text-xs font-semibold text-royal">
+                  {bn ? "ব্যবহার করুন" : "Open"} <ArrowRight size={12} className="transition group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            );
+          })}
+        </div>
       </section>
 
       <section className="container-page py-10 sm:py-14">

@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { prisma } from "@/lib/db";
 import { getLocale } from "@/lib/i18n";
+import { SITE_TOOL_COUNT } from "@/lib/tools";
 import { getDict } from "@/lib/dictionaries";
 import { getSettings } from "@/lib/settings";
 import { CourseCard, ProductCard, ServiceCard, TestimonialCard } from "@/components/site/cards";
@@ -128,8 +129,8 @@ export default async function HomePage() {
               </h1>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
                 {bn
-                  ? "ফটো ও স্টুডিও এডিট, এআই ডকুমেন্ট, প্রিন্ট মিডিয়া, প্রশ্ন তৈরি ও ৮০+ ফ্রি টুল — সব এক জায়গায়।"
-                  : "Photo and studio editing, AI documents, print media, question papers and 80+ free tools — all in one place."}
+                  ? "ফটো ও স্টুডিও এডিট, এআই ডকুমেন্ট, প্রিন্ট মিডিয়া, প্রশ্ন তৈরি ও ফ্রি টুলস — সব এক জায়গায়।"
+                  : "Photo and studio editing, AI documents, print media, question papers and free tools — all in one place."}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link
@@ -185,7 +186,7 @@ export default async function HomePage() {
                     { href: "/tools/photo", Icon: Camera, bn: "ফটো স্টুডিও", en: "Photo studio", noteBn: "পাসপোর্ট, ব্যাকগ্রাউন্ড", noteEn: "Passport, background" },
                     { href: "/tools", Icon: FileText, bn: "এআই ডকুমেন্ট", en: "AI document", noteBn: "সিভি, আবেদনপত্র", noteEn: "CV, applications" },
                     { href: "/applications", Icon: BadgeCheck, bn: "অনলাইন আবেদন", en: "Online applications", noteBn: "পাসপোর্ট, এনআইডি", noteEn: "Passport, NID" },
-                    { href: "/tools", Icon: Sparkles, bn: "৮০+ ফ্রি টুলস", en: "80+ free tools", noteBn: "PDF, ইমেজ, ভিডিও", noteEn: "PDF, image, video" },
+                    { href: "/tools", Icon: Sparkles, bn: `${SITE_TOOL_COUNT}+ ফ্রি টুলস`, en: `${SITE_TOOL_COUNT}+ free tools`, noteBn: "PDF, ছবি, স্বাক্ষর", noteEn: "PDF, image, signature" },
                   ].map((item) => (
                     <Link
                       key={item.href}
@@ -203,7 +204,7 @@ export default async function HomePage() {
 
                 <div className="grid grid-cols-3 divide-x divide-white/60 border-t border-white/60 bg-white/35 dark:divide-white/10 dark:border-white/10 dark:bg-white/5">
                   {[
-                    { value: "80+", bn: "ফ্রি টুল", en: "free tools" },
+                    { value: `${SITE_TOOL_COUNT}+`, bn: "ফ্রি টুল", en: "free tools" },
                     { value: "10+", bn: "বছরের অভিজ্ঞতা", en: "years" },
                     { value: "24/7", bn: "অনলাইন সেবা", en: "online" },
                   ].map((chip) => (

@@ -407,6 +407,47 @@ html {
 .btn-icon { padding: 0.55rem; border-radius: 0.7rem; }
 
 /* ---------------------------------------------------------------- forms */
+input[type="range"] {
+  width: 100%;
+  height: 1.15rem;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 0.35rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--royal) 24%, var(--line));
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  margin-top: -0.3rem;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 999px;
+  background: var(--royal);
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(20, 20, 40, 0.28);
+}
+input[type="range"]::-moz-range-track {
+  height: 0.35rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--royal) 24%, var(--line));
+}
+input[type="range"]::-moz-range-thumb {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 999px;
+  background: var(--royal);
+  border: 2px solid #fff;
+}
+input[type="range"]:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .input,
 .textarea,
 .select {

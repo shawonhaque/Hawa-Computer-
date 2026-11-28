@@ -51,3 +51,20 @@
   keep using `LocaleSwitcher` for language links or the English mirror will 404.
 - Header mega panels are wider than their trigger; `html { overflow-x: clip }` keeps the
   off-screen part from creating a horizontal scrollbar. Desktop nav appears from `xl`.
+
+## Tools and order handoff
+- Browser-only tools live in `src/components/tools/*` and share helpers from `src/lib/pdf.ts`
+  (a dependency-free JPEG→PDF writer; validate changes by parsing the output, e.g. `pypdf`).
+- `src/lib/tools.ts` is the single registry for the tool grid on `/tools` and the home-page
+  count — add an entry there instead of hardcoding numbers.
+
+## Production deploy
+- Reference host setup is Docker Compose (`docker-compose.yml` + `Caddyfile`): `app`, `db`,
+  one-shot `migrate` (profile `setup`), optional `proxy` (profile `proxy`, needs `SITE_DOMAIN`).
+- `GET /api/health` reports DB reachability and powers the compose healthcheck; keep it
+  dependency-free so it never becomes the reason a deploy is unhealthy.
+- `scripts/backup-db.sh` dumps the compose database and prunes old dumps; `DEPLOY.md` §4 has
+  the runbook, restore drill and the list of credentials still missing (payment gateway, SMS,
+  email).
+- `.github/workflows/ci.yml` runs typecheck, lint, migrate, seed and build against a throwaway
+  Postgres 17, then builds the image.

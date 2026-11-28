@@ -77,3 +77,80 @@ Run it under systemd or pm2, behind a TLS-terminating proxy. Persist `UPLOAD_DIR
 - [ ] `UPLOAD_DIR` is backed up together with the database.
 - [ ] More than one app instance? Move the rate limiter in `src/lib/rate-limit.ts` to Redis.
 - [ ] `GET /admin` while logged out redirects to `/login`; a customer is sent to `/account`.
+
+## 4. Production runbook (VPS)
+
+The Docker path is the reference deployment. A 2 vCPU / 2 GB box runs the app, Postgres and
+Caddy comfortably for a single shop.
+
+**First deploy**
+
+```bash
+git clone https://github.com/shawonhaque/Hawa-Computer-.git /srv/hawa
+cd /srv/hawa
+cp .env.example .env                     # POSTGRES_PASSWORD, NEXT_PUBLIC_SITE_URL, BUSINESS_*
+sed -i "s/^NEXT_PUBLIC_SITE_URL=.*/NEXT_PUBLIC_SITE_URL=https:\/\/shop.example.com/" .env
+docker compose --profile setup run --rm migrate
+SITE_DOMAIN=shop.example.com docker compose --profile proxy up -d --build
+docker compose exec app node -e "fetch('http://127.0.0.1:3000/api/health').then(r=>r.text()).then(console.log)"
+```
+
+Caddy obtains the TLS certificate on its own once DNS points at the box and ports 80/443 are
+open. Without `SITE_DOMAIN` the proxy serves `localhost` with an internal certificate, which is
+fine for a smoke test only.
+
+**Health**
+
+`GET /api/health` returns `{"status":"ok","db":"up"}` with `200`, or `503` when Postgres is
+unreachable. Point UptimeRobot / Better Stack / your monitoring at
+`https://shop.example.com/api/health` and alert on non-200.
+
+**Backups**
+
+```bash
+# nightly at 02:30, keeps 14 dumps under /srv/hawa/backups
+( crontab -l 2>/dev/null; echo "30 2 * * * /srv/hawa/scripts/backup-db.sh >> /var/log/hawa-backup.log 2>&1" ) | crontab -
+```
+
+Restore drill (do it once before you need it):
+
+```bash
+gunzip -c backups/hawa-20260101T023000Z.sql.gz | docker compose exec -T db psql -U hawa -d hawa_computer
+docker compose restart app
+```
+
+Copy dumps off the box (`rclone`, `scp`, or an object-storage bucket). A dump that only lives on
+the same disk as the database is not a backup.
+
+**Updates**
+
+```bash
+cd /srv/hawa && git pull
+docker compose --profile setup run --rm migrate       # applies new migrations, seed is idempotent
+docker compose up -d --build
+docker compose ps                                     # wait for "healthy"
+```
+
+**What still needs an account before it is fully live**
+
+| Capability | State in code | What to add |
+|---|---|---|
+| Card / mobile-money gateway | Not integrated — checkout records the method and staff confirm payment | bKash or SSLCommerz merchant account + a webhook route, then flip the order to `PAID` |
+| SMS (order updates) | `sendSms()` logs and skips unless configured | `SMS_API_URL`, `SMS_API_KEY` (any provider accepting a JSON POST) |
+| Email (order + contact notifications) | `sendEmail()` logs and skips unless configured | `EMAIL_API_URL`, `EMAIL_API_KEY`, `EMAIL_FROM` |
+| Static GitHub Pages mirror | Read-only brochure: carts, logins and orders live in the visitor's browser | Nothing — it is a preview; the Docker/Vercel host is the shop |
+
+### Static preview (GitHub Pages)
+
+`scripts/build-static.sh` + `scripts/publish-gh-pages.sh` publish a crawl-based mirror of the
+site to the `gh-pages` branch for `https://shawonhaque.github.io/Hawa-Computer-/`. It is built with
+`NEXT_PUBLIC_STATIC_MODE=1`, so a checkout stores the order in the browser and offers a
+prefilled WhatsApp message instead of writing to Postgres. Use it for demos and SEO — real
+orders belong on the server deployment.
+
+### CI
+
+`.github/workflows/ci.yml` runs on every push and pull request: installs with the committed
+lockfile, applies migrations to a throwaway Postgres 17 service, seeds, then runs
+`typecheck`, `lint` and `build`. A second job builds the production image and smoke-runs it.
+`.github/workflows/deploy-vercel.yml` stays as the optional Vercel path.
