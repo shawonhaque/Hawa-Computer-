@@ -27,3 +27,15 @@
 - `requireStaff` redirects roles without `DASHBOARD_VIEW` to `/account?denied=1` to avoid an
   `/admin` redirect loop.
 - Rate limiting is in-memory; multi-instance deployments need Redis.
+
+## Static mirror (GitHub Pages)
+- `scripts/build-static.sh` builds with `NEXT_PUBLIC_STATIC_MODE=1` and an asset prefix; `scripts/mirror.py`
+  crawls the running origin and rewrites links into a static tree, then the gh-pages branch is replaced.
+- No server exists on Pages, so `src/lib/local-auth.ts` keeps users, sessions and orders in localStorage
+  (passwords hashed with Web Crypto). `STATIC_MODE` selects those components over the Prisma ones.
+- Never build redirect URLs from `process.env.NEXT_PUBLIC_*` alone: env vars may be absent, so use
+  `routePrefix()`, which reads the deploy sub-path from Next's own `/_next/` script URLs.
+- The injected mirror script prefixes root-relative `href`/`src`/`action` values at runtime: Next hydration
+  re-renders with the origin paths, and client-rendered links never pass through the crawler.
+- `/checkout` and `/my-account` are not linked from crawled HTML, so they are seeded in `EXTRA`.
+- Forms that handle submission themselves must set `data-allow-submit`; the mirror blocks every other form.
