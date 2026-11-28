@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Clock, Mail, MapPin, MessageSquare, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, MessageSquare, Phone, UserRound } from "lucide-react";
 import { getLocale } from "@/lib/i18n";
 import { getDict } from "@/lib/dictionaries";
 import { getSettings } from "@/lib/settings";
 import { Breadcrumbs, PageHero } from "@/components/site/breadcrumbs";
 import { ContactForm } from "@/components/site/contact-form";
+import { StaticContactForm } from "@/components/site/static-contact-form";
+import { STATIC_MODE } from "@/lib/static-mode";
 
 export const dynamic = "force-dynamic";
 
@@ -37,7 +39,16 @@ export default async function ContactPage() {
           <div className="space-y-4">
             <div className="card p-5">
               <h2 className="text-base font-semibold">{bn ? "যোগাযোগের তথ্য" : "Contact details"}</h2>
+              <p className="mt-2 text-sm text-muted">
+                {bn
+                  ? "আমি বাদল মিয়া। আপনার কোনো প্রশ্ন, পরামর্শ বা কাজের বিষয়ে জানতে চাইলে সরাসরি যোগাযোগ করতে পারেন — যত দ্রুত সম্ভব উত্তর দেওয়ার চেষ্টা করব।"
+                  : "I am Badol Mia. Reach out with any question, suggestion or work request and I will reply as soon as possible."}
+              </p>
               <ul className="mt-4 space-y-3 text-sm">
+                <li className="flex items-start gap-2.5">
+                  <UserRound size={16} className="mt-0.5 shrink-0 text-royal" />
+                  <span>{bn ? "বাদল মিয়া (Badol Mia)" : "Badol Mia"}</span>
+                </li>
                 <li className="flex items-start gap-2.5">
                   <Phone size={16} className="mt-0.5 shrink-0 text-royal" />
                   <a href={`tel:${settings.phone}`} className="hover:text-royal">{settings.phone}</a>
@@ -82,6 +93,9 @@ export default async function ContactPage() {
               {bn ? "আমরা সাধারণত এক কর্মদিবসের মধ্যে উত্তর দিই।" : "We usually reply within one working day."}
             </p>
             <div className="mt-4">
+              {STATIC_MODE ? (
+                <StaticContactForm en={!bn} email={settings.email} whatsapp={settings.whatsapp} />
+              ) : (
               <ContactForm
                 labels={{
                   name: d.auth.name,
@@ -97,6 +111,7 @@ export default async function ContactPage() {
                   required: d.validation.required,
                 }}
               />
+              )}
             </div>
           </div>
         </div>
