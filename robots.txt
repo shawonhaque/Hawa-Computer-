@@ -8,5 +8,5 @@ Disallow: /checkout
 Disallow: /login
 Disallow: /register
 
-Host: http://localhost:3000
-Sitemap: http://localhost:3000/sitemap.xml
+Host: https://shawonhaque.github.io/Hawa-Computer-
+Sitemap: https://shawonhaque.github.io/Hawa-Computer-/sitemap.xml
