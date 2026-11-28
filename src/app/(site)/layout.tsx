@@ -19,14 +19,36 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
     label: d.nav[item.key as keyof typeof d.nav],
   }));
 
+  const announcements = bn
+    ? [
+        "পাসপোর্ট সাইজ ছবি এক ক্লিকে — ফটো এডিটর চালু",
+        "প্রিন্ট, ফটোকপি, স্ক্যান একই ছাদের নিচে",
+        "অনলাইন আবেদন: পাসপোর্ট, এনআইডি, জন্ম নিবন্ধন, ভর্তি",
+        "শনি–বৃহস্পতি, সকাল ৯টা – রাত ৯টা",
+      ]
+    : [
+        "Passport size photo in one click — photo editor is live",
+        "Print, photocopy and scanning under one roof",
+        "Online applications: passport, NID, birth registration, admission",
+        "Saturday–Thursday, 9am – 9pm",
+      ];
+
   return (
     <div className="flex min-h-dvh flex-col">
-      <div className="hidden border-b border-line bg-navy text-white/90 md:block dark:bg-[#0d1626]">
-        <div className="container-page flex h-9 items-center justify-between text-[0.72rem]">
-          <p>{bn ? "শনিবার – বৃহস্পতিবার, সকাল ৯টা – রাত ৯টা" : "Saturday – Thursday, 9am – 9pm"}</p>
-          <div className="flex items-center gap-4">
-            <a href={`tel:${settings.phone}`} className="hover:text-cyan">{settings.phone}</a>
-            <a href="/track" className="hover:text-cyan">{d.nav.track}</a>
+      <div className="overflow-hidden border-b border-[#ffe6bf] bg-[#fff6e9]">
+        <div className="container-page flex h-9 items-center gap-4 text-[0.72rem] font-medium text-[#7a5a1e]">
+          <div className="marquee min-w-0 flex-1">
+            <div className="marquee__track">
+              {[...announcements, ...announcements].map((item, index) => (
+                <span key={`${item}-${index}`} className="flex shrink-0 items-center gap-1.5">
+                  <span className="text-royal">✦</span> {item}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="hidden shrink-0 items-center gap-3 sm:flex">
+            <a href={`tel:${settings.phone}`} className="font-semibold text-royal hover:underline">{settings.phone}</a>
+            <a href="/track" className="hover:text-royal">{d.nav.track}</a>
           </div>
         </div>
       </div>

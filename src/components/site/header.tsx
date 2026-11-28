@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
   ChevronDown,
+  LogIn,
   LayoutDashboard,
   LogOut,
   Menu,
@@ -54,19 +55,13 @@ export function Header({
   const { count, ready } = useCart();
   const [open, setOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const accountRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     setOpen(false);
     setAccountOpen(false);
+    setSearchOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -83,25 +78,22 @@ export function Header({
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 border-b border-line/70 transition-all",
-        scrolled ? "glass shadow-sm" : "bg-surface/90 backdrop-blur",
-      )}
-    >
-      <div className="container-page flex h-16 items-center gap-3">
-        <Logo name={brand.name} tagline={brand.tagline} />
+    <header className="sticky top-0 z-50 border-b border-[#ececf1] bg-white/95 backdrop-blur-md">
+      <div className="container-page flex h-[68px] items-center gap-3 lg:h-[78px]">
+        <div className="shrink-0">
+          <Logo name={brand.name} tagline={brand.tagline} compact />
+        </div>
 
-        <nav className="ml-2 hidden items-center gap-0.5 lg:flex" aria-label="Main">
+        <nav className="hidden flex-1 items-center justify-center gap-x-1 lg:flex" aria-label="Main">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "rounded-lg px-3 py-2 text-[0.84rem] font-medium transition-colors",
+                "rounded-full px-3 py-2 text-[0.9rem] font-semibold transition-colors",
                 isActive(item.href)
                   ? "bg-royal-soft text-royal"
-                  : "text-muted hover:bg-surface-2 hover:text-fg",
+                  : "text-[#555] hover:bg-surface-2 hover:text-royal",
               )}
             >
               {item.label}
@@ -109,32 +101,30 @@ export function Header({
           ))}
         </nav>
 
-        <form action="/search" className="ml-auto hidden items-center md:flex" role="search">
-          <div className="relative">
-            <Search size={15} className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-muted" />
-            <input
-              type="search"
-              name="q"
-              placeholder={labels.searchPlaceholder}
-              aria-label={labels.search}
-              className="input h-9 w-44 pl-8 text-[0.82rem] xl:w-60"
-            />
-          </div>
-        </form>
+        <div className="ml-auto flex items-center gap-x-1.5 lg:ml-0">
+          <button
+            type="button"
+            onClick={() => setSearchOpen((value) => !value)}
+            aria-label={labels.search}
+            aria-expanded={searchOpen}
+            className="grid size-9 place-items-center rounded-full text-[#555] transition hover:bg-surface-2 hover:text-royal"
+          >
+            {searchOpen ? <X size={18} /> : <Search size={18} />}
+          </button>
 
-        <div className="ml-auto flex items-center gap-1.5 md:ml-0">
-          <div className="hidden sm:block">
+          <div className="hidden lg:block">
             <LocaleSwitcher locale={locale} />
           </div>
+
           <div className="hidden sm:block">
             <ThemeToggle labels={{ dark: labels.dark, light: labels.light }} />
           </div>
 
           <Link
             href="/cart"
-            className="btn btn-ghost btn-icon relative"
             aria-label={labels.cart}
             title={labels.cart}
+            className="relative grid size-9 place-items-center rounded-full text-[#555] transition hover:bg-surface-2 hover:text-royal"
           >
             <ShoppingCart size={18} />
             {ready && count > 0 ? (
@@ -145,17 +135,17 @@ export function Header({
           </Link>
 
           {user ? (
-            <div className="relative hidden sm:block" ref={accountRef}>
+            <div className="relative" ref={accountRef}>
               <button
                 type="button"
-                onClick={() => setAccountOpen((v) => !v)}
+                onClick={() => setAccountOpen((value) => !value)}
                 aria-expanded={accountOpen}
-                className="btn btn-secondary btn-sm gap-1.5"
+                className="flex items-center gap-2 rounded-full bg-[linear-gradient(135deg,#f59e0b,var(--royal))] px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-105"
               >
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-royal text-[0.6rem] font-bold text-white">
+                <span className="grid size-5 place-items-center rounded-full bg-white/25 text-[0.6rem] font-bold">
                   {user.name.slice(0, 1).toUpperCase()}
                 </span>
-                <span className="max-w-24 truncate">{user.name.split(" ")[0]}</span>
+                <span className="hidden max-w-24 truncate sm:block">{user.name.split(" ")[0]}</span>
                 <ChevronDown size={13} />
               </button>
               {accountOpen ? (
@@ -169,7 +159,10 @@ export function Header({
                     </Link>
                   ) : null}
                   <form action={logout}>
-                    <button type="submit" className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-danger hover:bg-danger/10">
+                    <button
+                      type="submit"
+                      className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-danger hover:bg-danger/10"
+                    >
                       <LogOut size={15} /> {labels.logout}
                     </button>
                   </form>
@@ -177,70 +170,110 @@ export function Header({
               ) : null}
             </div>
           ) : (
-            <div className="hidden items-center gap-1.5 sm:flex">
-              <Link href="/login" className="btn btn-ghost btn-sm">{labels.login}</Link>
-              <Link href="/register" className="btn btn-primary btn-sm">{labels.register}</Link>
-            </div>
+            <Link
+              href="/login"
+              className="hidden items-center gap-1.5 rounded-full bg-[linear-gradient(135deg,#f59e0b,var(--royal))] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_8px_18px_-10px_rgba(217,119,6,0.9)] transition hover:brightness-105 sm:inline-flex lg:px-5"
+            >
+              <LogIn size={16} /> {labels.login}
+            </Link>
           )}
 
           <button
             type="button"
-            className="btn btn-ghost btn-icon lg:hidden"
+            className="grid size-9 place-items-center rounded-full text-[#555] transition hover:bg-surface-2 hover:text-royal lg:hidden"
             aria-label={labels.menu}
             aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => setOpen((value) => !value)}
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {open ? (
-        <div className="border-t border-line bg-surface lg:hidden">
-          <div className="container-page py-4">
-            <form action="/search" role="search" className="mb-4">
+      {searchOpen ? (
+        <div className="border-t border-[#ececf1] bg-white">
+          <div className="container-page py-3">
+            <form action="/search" role="search">
               <div className="relative">
                 <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
-                <input type="search" name="q" placeholder={labels.searchPlaceholder} className="input pl-9" />
+                <input
+                  type="search"
+                  name="q"
+                  autoFocus
+                  placeholder={labels.searchPlaceholder}
+                  aria-label={labels.search}
+                  className="input pl-9"
+                />
               </div>
             </form>
-            <nav className="grid gap-1" aria-label="Mobile">
-              {nav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "rounded-lg px-3 py-2.5 text-sm font-medium",
-                    isActive(item.href) ? "bg-royal-soft text-royal" : "text-fg hover:bg-surface-2",
-                  )}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-            <div className="mt-4 flex items-center justify-between gap-2 border-t border-line pt-4">
-              <LocaleSwitcher locale={locale} />
-              <ThemeToggle labels={{ dark: labels.dark, light: labels.light }} />
-            </div>
-            <div className="mt-3 grid gap-2">
-              {user ? (
-                <>
-                  <Link href="/account" className="btn btn-secondary btn-sm">{labels.account}</Link>
-                  {user.isStaff ? <Link href="/admin" className="btn btn-secondary btn-sm">{labels.admin}</Link> : null}
-                  <form action={logout}>
-                    <button type="submit" className="btn btn-ghost btn-sm w-full text-danger">{labels.logout}</button>
-                  </form>
-                </>
-              ) : (
-                <>
-                  <Link href="/login" className="btn btn-secondary btn-sm">{labels.login}</Link>
-                  <Link href="/register" className="btn btn-primary btn-sm">{labels.register}</Link>
-                </>
-              )}
-            </div>
           </div>
         </div>
       ) : null}
+
+      <div
+        className={cn(
+          "fixed inset-0 z-50 bg-black/40 transition-opacity lg:hidden",
+          open ? "opacity-100" : "pointer-events-none opacity-0",
+        )}
+        onClick={() => setOpen(false)}
+        aria-hidden="true"
+      />
+      <aside
+        className={cn(
+          "fixed left-0 top-0 z-50 flex h-dvh w-10/12 max-w-xs flex-col border-r border-[#ececf1] bg-white p-5 shadow-xl transition-transform duration-300 lg:hidden",
+          open ? "translate-x-0" : "-translate-x-full",
+        )}
+        aria-hidden={!open}
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Logo name={brand.name} tagline={brand.tagline} compact />
+          <button
+            type="button"
+            onClick={() => setOpen(false)}
+            aria-label={labels.menu}
+            className="grid size-9 place-items-center rounded-full hover:bg-surface-2"
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        <nav className="flex flex-col gap-0.5" aria-label="Mobile">
+          {nav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "rounded-lg px-3 py-2.5 text-[0.95rem] font-semibold",
+                isActive(item.href) ? "bg-royal-soft text-royal" : "text-[#444] hover:bg-surface-2",
+              )}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
+          <LocaleSwitcher locale={locale} />
+          <ThemeToggle labels={{ dark: labels.dark, light: labels.light }} />
+        </div>
+
+        <div className="mt-4 grid gap-2">
+          {user ? (
+            <>
+              <Link href="/account" className="btn btn-secondary btn-sm justify-center">{labels.account}</Link>
+              {user.isStaff ? <Link href="/admin" className="btn btn-secondary btn-sm justify-center">{labels.admin}</Link> : null}
+              <form action={logout}>
+                <button type="submit" className="btn btn-ghost btn-sm w-full justify-center text-danger">{labels.logout}</button>
+              </form>
+            </>
+          ) : (
+            <>
+              <Link href="/login" className="btn btn-primary btn-sm justify-center">{labels.login}</Link>
+              <Link href="/register" className="btn btn-secondary btn-sm justify-center">{labels.register}</Link>
+            </>
+          )}
+        </div>
+      </aside>
     </header>
   );
 }

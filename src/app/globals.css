@@ -388,3 +388,10 @@ table.data tbody tr:hover { background: color-mix(in srgb, var(--surface-2) 60%,
 .scrollbar-thin { scrollbar-width: thin; }
 .hide-scrollbar { scrollbar-width: none; }
 .hide-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Announcement marquee (sohozkaj-style top strip) */
+.marquee { overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); }
+.marquee__track { display: inline-flex; align-items: center; gap: 2.2rem; white-space: nowrap; animation: marquee-scroll 32s linear infinite; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
