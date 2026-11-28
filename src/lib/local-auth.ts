@@ -170,4 +170,4 @@ export function routePrefix() {
   return index > 0 ? script.slice(0, index) : "";
 }
 
-export const STATIC_MODE = process.env.NEXT_PUBLIC_STATIC_MODE === "1";
+export { STATIC_MODE } from "@/lib/static-mode";

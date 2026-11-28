@@ -28,7 +28,8 @@ export function StaticCheckout({ en, delivery = 0 }: { en: boolean; delivery?: n
           {en ? "Your order number is" : "আপনার অর্ডার নম্বর"} <strong className="text-royal">{done}</strong>
         </p>
         <div className="mt-6 grid gap-2">
-          <Link href="/my-account" className="btn btn-primary justify-center">{en ? "See my orders" : "আমার অর্ডার দেখুন"}</Link>
+          <Link href={`/track?orderNo=${encodeURIComponent(done)}`} className="btn btn-primary justify-center">{en ? "Track this order" : "অর্ডার ট্র্যাক করুন"}</Link>
+          <Link href="/my-account" className="btn btn-secondary justify-center">{en ? "See my orders" : "আমার অর্ডার দেখুন"}</Link>
           <Link href="/shop" className="btn btn-secondary justify-center">{en ? "Continue shopping" : "আরও কেনাকাটা"}</Link>
         </div>
       </div>

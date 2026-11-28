@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogOut, Package, Save, ShoppingBag, UserRound } from "lucide-react";
+import { LogOut, Package, Save, ShoppingBag, Truck, UserRound } from "lucide-react";
 import { getOrders, logoutUser, routePrefix, updateProfile, useLocalSession, type LocalOrder } from "@/lib/local-auth";
 
 export default function MyAccountPage() {
@@ -107,6 +107,12 @@ export default function MyAccountPage() {
                     <span>{en ? "Total" : "মোট"}</span>
                     <span className="text-royal">৳{order.total}</span>
                   </p>
+                  <Link
+                    href={`/track?orderNo=${encodeURIComponent(order.code)}&phone=${encodeURIComponent(order.phone)}`}
+                    className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-royal"
+                  >
+                    <Truck size={13} /> {en ? "Track this order" : "অর্ডার ট্র্যাক করুন"}
+                  </Link>
                 </li>
               ))}
             </ul>

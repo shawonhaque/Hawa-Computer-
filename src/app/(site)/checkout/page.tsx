@@ -7,7 +7,7 @@ import { getSettings } from "@/lib/settings";
 import { Breadcrumbs, PageHero } from "@/components/site/breadcrumbs";
 import { CheckoutForm } from "@/components/site/checkout-form";
 import { StaticCheckout } from "@/components/site/static-checkout";
-import { STATIC_MODE } from "@/lib/local-auth";
+import { STATIC_MODE } from "@/lib/static-mode";
 
 export const metadata: Metadata = { title: "Checkout" };
 

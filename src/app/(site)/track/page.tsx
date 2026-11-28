@@ -8,6 +8,8 @@ import { getDict, pick } from "@/lib/dictionaries";
 import { formatDateTime, formatTaka, normalisePhone } from "@/lib/utils";
 import { Breadcrumbs, PageHero } from "@/components/site/breadcrumbs";
 import { StatusBadge } from "@/components/ui/badge";
+import { StaticTrack } from "@/components/site/static-track";
+import { STATIC_MODE } from "@/lib/static-mode";
 
 export const dynamic = "force-dynamic";
 
@@ -72,6 +74,18 @@ export default async function TrackPage({
   }
 
   const found = Boolean(order) || serviceOrders.length > 0 || applications.length > 0;
+
+  if (STATIC_MODE) {
+    return (
+      <>
+        <PageHero eyebrow={bn ? "ট্র্যাকিং" : "Tracking"} title={d.order.trackTitle} description={d.order.trackSub} />
+        <div className="container-page py-10">
+          <Breadcrumbs items={[{ label: d.nav.home, href: "/" }, { label: d.order.trackTitle }]} />
+          <StaticTrack en={!bn} />
+        </div>
+      </>
+    );
+  }
 
   return (
     <>

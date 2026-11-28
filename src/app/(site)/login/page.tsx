@@ -6,7 +6,7 @@ import { getLocale } from "@/lib/i18n";
 import { getDict } from "@/lib/dictionaries";
 import { LoginForm } from "@/components/auth/auth-forms";
 import { StaticLoginForm } from "@/components/auth/static-auth";
-import { STATIC_MODE } from "@/lib/local-auth";
+import { STATIC_MODE } from "@/lib/static-mode";
 
 export const dynamic = "force-dynamic";
 
