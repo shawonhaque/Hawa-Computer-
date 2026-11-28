@@ -39,10 +39,10 @@ export function FloatingActions({
         href={`tel:${phone.replace(/\s/g, "")}`}
         aria-label={labels.call}
         title={labels.call}
-        className="group flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2.5 text-sm font-semibold text-[#4a4759] shadow-[0_14px_30px_-18px_rgba(29,27,49,0.6)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:text-royal"
+        className="group hidden items-center gap-2 rounded-full border border-white/70 bg-white/75 px-3 py-2.5 text-sm font-semibold text-[#4a4759] shadow-[0_14px_30px_-18px_rgba(29,27,49,0.6)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:text-royal sm:flex"
       >
         <Phone size={17} className="text-royal" />
-        <span className="hidden sm:inline">{labels.call}</span>
+        <span>{labels.call}</span>
       </a>
 
       {whatsapp ? (

@@ -412,7 +412,7 @@ export function Header({
             </Link>
 
             {activeUser ? (
-              <div className="relative" ref={accountRef}>
+              <div className="relative hidden sm:block" ref={accountRef}>
                 <button
                   type="button"
                   onClick={() => setAccountOpen((value) => !value)}

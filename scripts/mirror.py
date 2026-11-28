@@ -113,6 +113,23 @@ for path in ("/icon.png","/apple-icon.png","/favicon.ico","/robots.txt"):
     except Exception as exc:
         print("extra skip", path, exc, flush=True)
 
+SITE=(("https://"+DOMAIN) if DOMAIN else "https://shawonhaque.github.io"+BP).rstrip("/")
+def fetch_text(path):
+    req=urllib.request.Request(ORIGIN+path, headers={"User-Agent":"Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return r.read().decode("utf-8")
+
+for path in ("/sitemap.xml","/robots.txt"):
+    try:
+        text=fetch_text(path)
+    except Exception as exc:
+        print("meta skip", path, exc, flush=True)
+        continue
+    text=re.sub(r'https?://(?:localhost:3000|127\.0\.0\.1:3000)', SITE, text)
+    text=re.sub(r'(<loc>)/', r'\1%s/' % SITE, text)
+    with open(os.path.join(OUT, path.lstrip("/")),"w",encoding="utf-8") as fh:
+        fh.write(text)
+
 open(os.path.join(OUT,".nojekyll"),"w").close()
 if DOMAIN:
     open(os.path.join(OUT,"CNAME"),"w").write(DOMAIN.strip()+"\n")

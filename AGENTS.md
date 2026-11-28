@@ -38,6 +38,9 @@
 - The injected mirror script prefixes root-relative `href`/`src`/`action` values at runtime: Next hydration
   re-renders with the origin paths, and client-rendered links never pass through the crawler.
 - `/checkout` and `/my-account` are not linked from crawled HTML, so they are seeded in `EXTRA`.
+- `sitemap.xml` and `robots.txt` are fetched from the origin and rewritten to the public base path;
+  keep `src/app/sitemap.ts`'s static route list current or the deployed sitemap will drift.
+- Mobile (<640px) hides the brand tagline and the account pill; both live in the drawer instead.
 - Forms that handle submission themselves must set `data-allow-submit`; the mirror blocks every other form.
 
 ## Site shell (static build)

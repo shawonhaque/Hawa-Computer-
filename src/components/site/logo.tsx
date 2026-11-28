@@ -25,8 +25,8 @@ export function Logo({
       />
       {compact ? null : (
         <span className="leading-tight">
-          <span className="block text-[0.98rem] font-bold tracking-tight">{name}</span>
-          {tagline ? <span className="block text-[0.68rem] font-medium text-muted">{tagline}</span> : null}
+          <span className="block whitespace-nowrap text-[0.98rem] font-bold tracking-tight">{name}</span>
+          {tagline ? <span className="hidden text-[0.68rem] font-medium text-muted sm:block">{tagline}</span> : null}
         </span>
       )}
     </Link>
