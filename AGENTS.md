@@ -39,3 +39,15 @@
   re-renders with the origin paths, and client-rendered links never pass through the crawler.
 - `/checkout` and `/my-account` are not linked from crawled HTML, so they are seeded in `EXTRA`.
 - Forms that handle submission themselves must set `data-allow-submit`; the mirror blocks every other form.
+
+## Site shell (static build)
+- `scripts/build-static.sh` builds the mirror to `/tmp/hawa-static`; `scripts/publish-gh-pages.sh`
+  mirrors it to `/tmp/ghp-site` and force-pushes `gh-pages`. Both need `BASE_PATH=/Hawa-Computer-`
+  (and `GITHUB_TOKEN` for publishing). GitHub Pages takes ~1 min to serve the new files.
+- On the static build `NEXT_PUBLIC_STATIC_MODE=1` swaps server flows for local ones
+  (`StaticCheckout`, `StaticTrack`, `StaticLoginForm`, `StaticContactForm`), so orders and
+  accounts live in `localStorage`, not Postgres.
+- `/api/locale?lang=en&next=…` links are rewritten by `scripts/mirror.py` into `/en/…` pages —
+  keep using `LocaleSwitcher` for language links or the English mirror will 404.
+- Header mega panels are wider than their trigger; `html { overflow-x: clip }` keeps the
+  off-screen part from creating a horizontal scrollbar. Desktop nav appears from `xl`.

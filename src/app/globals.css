@@ -153,6 +153,12 @@ html[lang="bn"] body {
 }
 
 /* ---------------------------------------------------------------- surfaces */
+/* Mega panels sit wider than the trigger; clip the overflow instead of
+   allowing a horizontal scrollbar on narrow desktops. */
+html {
+  overflow-x: clip;
+}
+
 .card {
   background: var(--glass);
   border: 1px solid var(--glass-border);

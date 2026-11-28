@@ -82,6 +82,7 @@ export function Header({
   const searchRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const [pill, setPill] = useState({ left: 0, width: 0, visible: false });
+  const [panelShift, setPanelShift] = useState(0);
 
   useEffect(() => {
     setOpen(false);
@@ -91,6 +92,17 @@ export function Header({
     setOpenMobileGroup(null);
     setQuery("");
   }, [pathname]);
+
+  useEffect(() => {
+    if (!openGroup) {
+      setPanelShift(0);
+      return;
+    }
+    const panel = document.querySelector<HTMLElement>('.nav-drop[data-open="true"] .nav-drop-panel');
+    if (!panel) return;
+    const overflow = panel.getBoundingClientRect().right + 12 - window.innerWidth;
+    setPanelShift(overflow > 0 ? -Math.ceil(overflow) : 0);
+  }, [openGroup]);
 
   useEffect(() => {
     function onClick(event: MouseEvent) {
@@ -249,7 +261,7 @@ export function Header({
           <nav
             ref={navRef}
             onMouseLeave={resetPill}
-            className="relative col-start-2 row-start-1 hidden min-w-0 items-center justify-center gap-x-1 lg:flex"
+            className="relative col-start-2 row-start-1 hidden min-w-0 items-center justify-center gap-x-1 xl:flex"
             aria-label="Main"
           >
             <span
@@ -298,6 +310,7 @@ export function Header({
                         "nav-drop-panel nav-mega absolute top-full pt-2",
                         (group.columns?.length ?? 0) < 3 && "nav-mega--2",
                       )}
+                      style={expanded ? { marginLeft: panelShift } : undefined}
                     >
                       <div className="grid gap-1 rounded-2xl border border-white/80 bg-white p-2.5 shadow-[0_34px_70px_-38px_rgba(29,27,49,0.6)] backdrop-blur-2xl dark:border-white/10 dark:bg-[#111a28] sm:grid-cols-2 lg:grid-cols-3">
                         {group.columns.map((column) => (
@@ -344,7 +357,7 @@ export function Header({
           <div className="col-start-3 row-start-1 flex shrink-0 items-center gap-x-1 justify-self-end">
             <Link
               href="/track"
-              className="mr-1 hidden items-center gap-1.5 whitespace-nowrap rounded-full border border-royal/30 bg-white/60 px-3 py-1.5 text-[0.8rem] font-semibold text-royal transition hover:-translate-y-0.5 hover:bg-white dark:border-royal/40 dark:bg-white/5 lg:flex"
+              className="mr-1 hidden items-center gap-1.5 whitespace-nowrap rounded-full border border-royal/30 bg-white/60 px-3 py-1.5 text-[0.8rem] font-semibold text-royal transition hover:-translate-y-0.5 hover:bg-white dark:border-royal/40 dark:bg-white/5 xl:flex"
             >
               <Truck size={14} /> {labels.track}
             </Link>
@@ -417,7 +430,7 @@ export function Header({
                     <Link href={accountHref} className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-white dark:hover:bg-white/10">
                       <User size={15} /> {labels.account}
                     </Link>
-                    <Link href="/track" className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-white dark:hover:bg-white/10 lg:hidden">
+                    <Link href="/track" className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm hover:bg-white dark:hover:bg-white/10 xl:hidden">
                       <Truck size={15} /> {labels.track}
                     </Link>
                     {activeUser.isStaff ? (
@@ -460,7 +473,7 @@ export function Header({
 
             <button
               type="button"
-              className="grid size-9 place-items-center rounded-full text-[#4a4759] transition hover:bg-white/70 hover:text-royal dark:text-slate-300 dark:hover:bg-white/10 lg:hidden"
+              className="grid size-9 place-items-center rounded-full text-[#4a4759] transition hover:bg-white/70 hover:text-royal dark:text-slate-300 dark:hover:bg-white/10 xl:hidden"
               aria-label={labels.menu}
               aria-expanded={open}
               onClick={() => setOpen((value) => !value)}
@@ -475,7 +488,7 @@ export function Header({
 
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-black/30 backdrop-blur-sm transition-opacity lg:hidden",
+          "fixed inset-0 z-40 bg-black/30 backdrop-blur-sm transition-opacity xl:hidden",
           open ? "opacity-100" : "pointer-events-none opacity-0",
         )}
         onClick={() => setOpen(false)}
@@ -483,7 +496,7 @@ export function Header({
       />
       <aside
         className={cn(
-          "fixed left-0 top-0 z-50 flex h-dvh w-10/12 max-w-xs flex-col overflow-y-auto border-r border-white/60 bg-white/90 p-5 shadow-xl backdrop-blur-2xl transition-transform duration-300 lg:hidden",
+          "fixed left-0 top-0 z-50 flex h-dvh w-10/12 max-w-xs flex-col overflow-y-auto border-r border-white/60 bg-white/90 p-5 shadow-xl backdrop-blur-2xl transition-transform duration-300 dark:bg-[#0b1421]/95 xl:hidden",
           open ? "translate-x-0" : "-translate-x-full",
         )}
         aria-hidden={!open}

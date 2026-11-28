@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Noto_Sans_Bengali } from "next/font/google";
+import { Hind_Siliguri, Inter } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import { ToastProvider } from "@/components/ui/toast";
@@ -8,7 +8,7 @@ import { getLocale } from "@/lib/i18n";
 import { getSettings } from "@/lib/settings";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const bengali = Noto_Sans_Bengali({
+const bengali = Hind_Siliguri({
   subsets: ["bengali", "latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-bengali",
