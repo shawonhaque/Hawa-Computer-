@@ -25,6 +25,7 @@ export function Footer({ locale, settings }: { locale: Locale; settings: SiteSet
     { href: "/contact", label: d.nav.contact },
     { href: "/faq", label: d.nav.faq },
     { href: "/p/privacy-policy", label: d.footer.privacy },
+    { href: "/p/terms", label: d.footer.terms },
     { href: "/p/refund-policy", label: d.footer.refund },
   ];
 
