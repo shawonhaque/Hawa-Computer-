@@ -26,8 +26,11 @@ export function SiteLoader({ label }: { label: string }) {
     >
       <div className="site-loader__mark">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/hawa-icon.png" alt="" width={320} height={208} />
+        <img src="/brand/logo-loader.webp" alt="" width={480} height={368} />
       </div>
+      <span className="site-loader__bar">
+        <span />
+      </span>
       <p className="site-loader__label">{label}</p>
     </div>
   );
