@@ -1,517 +1,1205 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
 <loc>https://shawonhaque.github.io/Hawa-Computer-/</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>1</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/training</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/tools</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/tools/photo</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/tools/pdf</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/tools/image</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/training/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/tools/signature</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/training/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/about</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/tools/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/tools/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/tools/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/tools/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/contact</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/tools/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/tools/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/tools/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/tools/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/faq</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/tools/photo/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/tools/photo/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/tools/photo/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/tools/photo/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/track</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/tools/photo/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/tools/photo/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/tools/photo/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/tools/photo/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/verify</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/tools/pdf/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/tools/pdf/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/tools/pdf/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/tools/pdf/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/p/privacy-policy</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/tools/pdf/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/tools/pdf/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/tools/pdf/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/tools/pdf/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/p/terms</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/tools/image/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/tools/image/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/tools/image/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/tools/image/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/p/refund-policy</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/tools/image/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/tools/image/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/tools/image/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/tools/image/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/passport-application</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/tools/signature/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/tools/signature/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/tools/signature/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/tools/signature/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/tools/signature/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/tools/signature/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/tools/signature/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/tools/signature/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/about/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/about/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/about/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/about/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/about/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/about/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/about/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/about/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/contact/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/contact/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/contact/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/contact/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/contact/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/contact/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/contact/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/contact/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/faq/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/faq/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/faq/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/faq/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/faq/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/faq/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/faq/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/faq/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/track/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/track/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/track/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/track/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/track/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/track/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/track/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/track/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/verify/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/verify/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/verify/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/verify/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/verify/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/verify/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/verify/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/verify/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/p/privacy-policy/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/p/privacy-policy/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/p/privacy-policy/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/p/privacy-policy/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/p/privacy-policy/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/p/privacy-policy/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/p/privacy-policy/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/p/privacy-policy/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/p/terms/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/p/terms/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/p/terms/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/p/terms/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/p/terms/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/p/terms/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/p/terms/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/p/terms/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/p/refund-policy/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/p/refund-policy/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/p/refund-policy/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/p/refund-policy/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/p/refund-policy/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/p/refund-policy/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/p/refund-policy/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/p/refund-policy/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/passport-application/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/passport-application/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/passport-application/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/passport-application/"/>
 <lastmod>2026-11-28T08:24:34.180Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/passport-renewal</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/passport-application/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/passport-application/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/passport-application/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/passport-application/"/>
+<lastmod>2026-11-28T08:24:34.180Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/passport-renewal/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/passport-renewal/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/passport-renewal/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/passport-renewal/"/>
 <lastmod>2026-11-28T08:24:34.184Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/nid-correction</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/passport-renewal/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/passport-renewal/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/passport-renewal/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/passport-renewal/"/>
+<lastmod>2026-11-28T08:24:34.184Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/nid-correction/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/nid-correction/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/nid-correction/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/nid-correction/"/>
 <lastmod>2026-11-28T08:24:34.186Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/nid-registration</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/nid-correction/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/nid-correction/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/nid-correction/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/nid-correction/"/>
+<lastmod>2026-11-28T08:24:34.186Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/nid-registration/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/nid-registration/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/nid-registration/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/nid-registration/"/>
 <lastmod>2026-11-28T08:24:34.188Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/birth-registration</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/nid-registration/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/nid-registration/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/nid-registration/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/nid-registration/"/>
+<lastmod>2026-11-28T08:24:34.188Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/birth-registration/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/birth-registration/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/birth-registration/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/birth-registration/"/>
 <lastmod>2026-11-28T08:24:34.191Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/birth-certificate-correction</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/birth-registration/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/birth-registration/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/birth-registration/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/birth-registration/"/>
+<lastmod>2026-11-28T08:24:34.191Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/birth-certificate-correction/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/birth-certificate-correction/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/birth-certificate-correction/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/birth-certificate-correction/"/>
 <lastmod>2026-11-28T08:24:34.193Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/police-clearance</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/birth-certificate-correction/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/birth-certificate-correction/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/birth-certificate-correction/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/birth-certificate-correction/"/>
+<lastmod>2026-11-28T08:24:34.193Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/police-clearance/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/police-clearance/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/police-clearance/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/police-clearance/"/>
 <lastmod>2026-11-28T08:24:34.195Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/school-admission</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/police-clearance/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/police-clearance/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/police-clearance/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/police-clearance/"/>
+<lastmod>2026-11-28T08:24:34.195Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/school-admission/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/school-admission/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/school-admission/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/school-admission/"/>
 <lastmod>2026-11-28T08:24:34.197Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/college-admission</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/school-admission/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/school-admission/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/school-admission/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/school-admission/"/>
+<lastmod>2026-11-28T08:24:34.197Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/college-admission/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/college-admission/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/college-admission/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/college-admission/"/>
 <lastmod>2026-11-28T08:24:34.199Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/university-admission</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/college-admission/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/college-admission/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/college-admission/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/college-admission/"/>
+<lastmod>2026-11-28T08:24:34.199Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/university-admission/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/university-admission/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/university-admission/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/university-admission/"/>
 <lastmod>2026-11-28T08:24:34.201Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/job-application</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/university-admission/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/university-admission/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/university-admission/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/university-admission/"/>
+<lastmod>2026-11-28T08:24:34.201Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/job-application/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/job-application/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/job-application/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/job-application/"/>
 <lastmod>2026-11-28T08:24:34.203Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/cv-creation</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/job-application/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/job-application/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/job-application/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/job-application/"/>
+<lastmod>2026-11-28T08:24:34.203Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/cv-creation/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/cv-creation/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/cv-creation/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/cv-creation/"/>
 <lastmod>2026-11-28T08:24:34.206Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/scholarship-application</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/cv-creation/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/cv-creation/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/cv-creation/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/cv-creation/"/>
+<lastmod>2026-11-28T08:24:34.206Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/scholarship-application/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/scholarship-application/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/scholarship-application/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/scholarship-application/"/>
 <lastmod>2026-11-28T08:24:34.208Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/government-form-filling</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/scholarship-application/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/scholarship-application/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/scholarship-application/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/scholarship-application/"/>
+<lastmod>2026-11-28T08:24:34.208Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/applications/government-form-filling/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/government-form-filling/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/government-form-filling/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/government-form-filling/"/>
 <lastmod>2026-11-28T08:24:34.210Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services/passport-size-photo</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/applications/government-form-filling/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/applications/government-form-filling/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/applications/government-form-filling/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/applications/government-form-filling/"/>
+<lastmod>2026-11-28T08:24:34.210Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/passport-size-photo/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/passport-size-photo/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/passport-size-photo/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/passport-size-photo/"/>
 <lastmod>2026-11-28T08:24:34.212Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services/visa-size-photo</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/passport-size-photo/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/passport-size-photo/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/passport-size-photo/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/passport-size-photo/"/>
+<lastmod>2026-11-28T08:24:34.212Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/visa-size-photo/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/visa-size-photo/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/visa-size-photo/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/visa-size-photo/"/>
 <lastmod>2026-11-28T08:24:34.214Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services/photo-retouching</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/visa-size-photo/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/visa-size-photo/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/visa-size-photo/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/visa-size-photo/"/>
+<lastmod>2026-11-28T08:24:34.214Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/photo-retouching/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/photo-retouching/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/photo-retouching/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/photo-retouching/"/>
 <lastmod>2026-11-28T08:24:34.216Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services/document-scanning</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/photo-retouching/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/photo-retouching/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/photo-retouching/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/photo-retouching/"/>
+<lastmod>2026-11-28T08:24:34.216Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/document-scanning/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/document-scanning/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/document-scanning/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/document-scanning/"/>
 <lastmod>2026-11-28T08:24:34.217Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services/printing-photocopy</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/document-scanning/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/document-scanning/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/document-scanning/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/document-scanning/"/>
+<lastmod>2026-11-28T08:24:34.217Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/printing-photocopy/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/printing-photocopy/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/printing-photocopy/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/printing-photocopy/"/>
 <lastmod>2026-11-28T08:24:34.219Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services/bangla-typing</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/printing-photocopy/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/printing-photocopy/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/printing-photocopy/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/printing-photocopy/"/>
+<lastmod>2026-11-28T08:24:34.219Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/bangla-typing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/bangla-typing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/bangla-typing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/bangla-typing/"/>
 <lastmod>2026-11-28T08:24:34.221Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services/english-typing</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/bangla-typing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/bangla-typing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/bangla-typing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/bangla-typing/"/>
+<lastmod>2026-11-28T08:24:34.221Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/english-typing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/english-typing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/english-typing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/english-typing/"/>
 <lastmod>2026-11-28T08:24:34.223Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services/cv-biodata-typing</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/english-typing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/english-typing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/english-typing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/english-typing/"/>
+<lastmod>2026-11-28T08:24:34.223Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/cv-biodata-typing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/cv-biodata-typing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/cv-biodata-typing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/cv-biodata-typing/"/>
 <lastmod>2026-11-28T08:24:34.225Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services/affidavit-typing</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/cv-biodata-typing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/cv-biodata-typing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/cv-biodata-typing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/cv-biodata-typing/"/>
+<lastmod>2026-11-28T08:24:34.225Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/affidavit-typing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/affidavit-typing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/affidavit-typing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/affidavit-typing/"/>
 <lastmod>2026-11-28T08:24:34.227Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services/pdf-editing</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/affidavit-typing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/affidavit-typing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/affidavit-typing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/affidavit-typing/"/>
+<lastmod>2026-11-28T08:24:34.227Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/pdf-editing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/pdf-editing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/pdf-editing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/pdf-editing/"/>
 <lastmod>2026-11-28T08:24:34.229Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/services/online-form-filling</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/pdf-editing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/pdf-editing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/pdf-editing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/pdf-editing/"/>
+<lastmod>2026-11-28T08:24:34.229Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/services/online-form-filling/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/online-form-filling/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/online-form-filling/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/online-form-filling/"/>
 <lastmod>2026-11-28T08:24:34.231Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/kagoj-200-page-notebook</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/services/online-form-filling/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/services/online-form-filling/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/services/online-form-filling/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/services/online-form-filling/"/>
+<lastmod>2026-11-28T08:24:34.231Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/kagoj-200-page-notebook/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/kagoj-200-page-notebook/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/kagoj-200-page-notebook/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/kagoj-200-page-notebook/"/>
 <lastmod>2026-11-28T08:24:34.246Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/khata-120-page-pack-of-3</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/kagoj-200-page-notebook/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/kagoj-200-page-notebook/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/kagoj-200-page-notebook/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/kagoj-200-page-notebook/"/>
+<lastmod>2026-11-28T08:24:34.246Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/khata-120-page-pack-of-3/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/khata-120-page-pack-of-3/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/khata-120-page-pack-of-3/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/khata-120-page-pack-of-3/"/>
 <lastmod>2026-11-28T08:24:34.249Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/spiral-notebook-a5</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/khata-120-page-pack-of-3/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/khata-120-page-pack-of-3/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/khata-120-page-pack-of-3/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/khata-120-page-pack-of-3/"/>
+<lastmod>2026-11-28T08:24:34.249Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/spiral-notebook-a5/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/spiral-notebook-a5/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/spiral-notebook-a5/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/spiral-notebook-a5/"/>
 <lastmod>2026-11-28T08:24:34.250Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/matador-ball-pen-blue</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/spiral-notebook-a5/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/spiral-notebook-a5/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/spiral-notebook-a5/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/spiral-notebook-a5/"/>
+<lastmod>2026-11-28T08:24:34.250Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/matador-ball-pen-blue/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/matador-ball-pen-blue/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/matador-ball-pen-blue/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/matador-ball-pen-blue/"/>
 <lastmod>2026-11-28T08:24:34.252Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/pilot-gel-pen-black</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/matador-ball-pen-blue/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/matador-ball-pen-blue/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/matador-ball-pen-blue/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/matador-ball-pen-blue/"/>
+<lastmod>2026-11-28T08:24:34.252Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/pilot-gel-pen-black/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/pilot-gel-pen-black/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/pilot-gel-pen-black/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/pilot-gel-pen-black/"/>
 <lastmod>2026-11-28T08:24:34.253Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/marker-permanent-black</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/pilot-gel-pen-black/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/pilot-gel-pen-black/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/pilot-gel-pen-black/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/pilot-gel-pen-black/"/>
+<lastmod>2026-11-28T08:24:34.253Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/marker-permanent-black/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/marker-permanent-black/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/marker-permanent-black/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/marker-permanent-black/"/>
 <lastmod>2026-11-28T08:24:34.255Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/doms-pencil-hb-pack-10</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/marker-permanent-black/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/marker-permanent-black/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/marker-permanent-black/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/marker-permanent-black/"/>
+<lastmod>2026-11-28T08:24:34.255Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/doms-pencil-hb-pack-10/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/doms-pencil-hb-pack-10/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/doms-pencil-hb-pack-10/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/doms-pencil-hb-pack-10/"/>
 <lastmod>2026-11-28T08:24:34.257Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/mechanical-pencil-0-5</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/doms-pencil-hb-pack-10/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/doms-pencil-hb-pack-10/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/doms-pencil-hb-pack-10/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/doms-pencil-hb-pack-10/"/>
+<lastmod>2026-11-28T08:24:34.257Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/mechanical-pencil-0-5/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/mechanical-pencil-0-5/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/mechanical-pencil-0-5/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/mechanical-pencil-0-5/"/>
 <lastmod>2026-11-28T08:24:34.258Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/eraser-pack-of-5</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/mechanical-pencil-0-5/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/mechanical-pencil-0-5/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/mechanical-pencil-0-5/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/mechanical-pencil-0-5/"/>
+<lastmod>2026-11-28T08:24:34.258Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/eraser-pack-of-5/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/eraser-pack-of-5/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/eraser-pack-of-5/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/eraser-pack-of-5/"/>
 <lastmod>2026-11-28T08:24:34.259Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/metal-sharpener</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/eraser-pack-of-5/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/eraser-pack-of-5/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/eraser-pack-of-5/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/eraser-pack-of-5/"/>
+<lastmod>2026-11-28T08:24:34.259Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/metal-sharpener/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/metal-sharpener/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/metal-sharpener/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/metal-sharpener/"/>
 <lastmod>2026-11-28T08:24:34.261Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/executive-diary-2026</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/metal-sharpener/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/metal-sharpener/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/metal-sharpener/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/metal-sharpener/"/>
+<lastmod>2026-11-28T08:24:34.261Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/executive-diary-2026/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/executive-diary-2026/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/executive-diary-2026/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/executive-diary-2026/"/>
 <lastmod>2026-11-28T08:24:34.263Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/hardboard-a4</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/executive-diary-2026/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/executive-diary-2026/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/executive-diary-2026/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/executive-diary-2026/"/>
+<lastmod>2026-11-28T08:24:34.263Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/hardboard-a4/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/hardboard-a4/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/hardboard-a4/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/hardboard-a4/"/>
 <lastmod>2026-11-28T08:24:34.264Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/color-paper-pack-20</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/hardboard-a4/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/hardboard-a4/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/hardboard-a4/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/hardboard-a4/"/>
+<lastmod>2026-11-28T08:24:34.264Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/color-paper-pack-20/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/color-paper-pack-20/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/color-paper-pack-20/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/color-paper-pack-20/"/>
 <lastmod>2026-11-28T08:24:34.265Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/chart-paper-white</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/color-paper-pack-20/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/color-paper-pack-20/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/color-paper-pack-20/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/color-paper-pack-20/"/>
+<lastmod>2026-11-28T08:24:34.265Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/chart-paper-white/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/chart-paper-white/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/chart-paper-white/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/chart-paper-white/"/>
 <lastmod>2026-11-28T08:24:34.267Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/geometry-box-complete</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/chart-paper-white/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/chart-paper-white/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/chart-paper-white/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/chart-paper-white/"/>
+<lastmod>2026-11-28T08:24:34.267Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/geometry-box-complete/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/geometry-box-complete/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/geometry-box-complete/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/geometry-box-complete/"/>
 <lastmod>2026-11-28T08:24:34.269Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/school-bag-medium</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/geometry-box-complete/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/geometry-box-complete/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/geometry-box-complete/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/geometry-box-complete/"/>
+<lastmod>2026-11-28T08:24:34.269Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/school-bag-medium/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/school-bag-medium/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/school-bag-medium/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/school-bag-medium/"/>
 <lastmod>2026-11-28T08:24:34.270Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/water-bottle-750ml</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/school-bag-medium/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/school-bag-medium/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/school-bag-medium/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/school-bag-medium/"/>
+<lastmod>2026-11-28T08:24:34.270Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/water-bottle-750ml/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/water-bottle-750ml/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/water-bottle-750ml/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/water-bottle-750ml/"/>
 <lastmod>2026-11-28T08:24:34.272Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/thakurmar-jhuli</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/water-bottle-750ml/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/water-bottle-750ml/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/water-bottle-750ml/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/water-bottle-750ml/"/>
+<lastmod>2026-11-28T08:24:34.272Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/thakurmar-jhuli/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/thakurmar-jhuli/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/thakurmar-jhuli/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/thakurmar-jhuli/"/>
 <lastmod>2026-11-28T08:24:34.273Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/hsc-physics-1st-paper</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/thakurmar-jhuli/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/thakurmar-jhuli/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/thakurmar-jhuli/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/thakurmar-jhuli/"/>
+<lastmod>2026-11-28T08:24:34.273Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/hsc-physics-1st-paper/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/hsc-physics-1st-paper/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/hsc-physics-1st-paper/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/hsc-physics-1st-paper/"/>
 <lastmod>2026-11-28T08:24:34.275Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/ssc-general-math</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/hsc-physics-1st-paper/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/hsc-physics-1st-paper/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/hsc-physics-1st-paper/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/hsc-physics-1st-paper/"/>
+<lastmod>2026-11-28T08:24:34.275Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/ssc-general-math/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/ssc-general-math/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/ssc-general-math/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/ssc-general-math/"/>
 <lastmod>2026-11-28T08:24:34.276Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/a4-copy-paper-500-sheets</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/ssc-general-math/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/ssc-general-math/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/ssc-general-math/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/ssc-general-math/"/>
+<lastmod>2026-11-28T08:24:34.276Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/a4-copy-paper-500-sheets/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/a4-copy-paper-500-sheets/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/a4-copy-paper-500-sheets/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/a4-copy-paper-500-sheets/"/>
 <lastmod>2026-11-28T08:24:34.278Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/file-folder-set</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/a4-copy-paper-500-sheets/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/a4-copy-paper-500-sheets/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/a4-copy-paper-500-sheets/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/a4-copy-paper-500-sheets/"/>
+<lastmod>2026-11-28T08:24:34.278Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/file-folder-set/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/file-folder-set/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/file-folder-set/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/file-folder-set/"/>
 <lastmod>2026-11-28T08:24:34.279Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/stapler-with-pins</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/file-folder-set/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/file-folder-set/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/file-folder-set/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/file-folder-set/"/>
+<lastmod>2026-11-28T08:24:34.279Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/stapler-with-pins/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/stapler-with-pins/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/stapler-with-pins/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/stapler-with-pins/"/>
 <lastmod>2026-11-28T08:24:34.281Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/scissors-medium</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/stapler-with-pins/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/stapler-with-pins/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/stapler-with-pins/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/stapler-with-pins/"/>
+<lastmod>2026-11-28T08:24:34.281Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/shop/scissors-medium/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/scissors-medium/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/scissors-medium/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/scissors-medium/"/>
 <lastmod>2026-11-28T08:24:34.282Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/pather-panchali</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/shop/scissors-medium/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/shop/scissors-medium/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/shop/scissors-medium/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/shop/scissors-medium/"/>
+<lastmod>2026-11-28T08:24:34.282Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/pather-panchali/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/pather-panchali/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/pather-panchali/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/pather-panchali/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/sesher-kabita</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/pather-panchali/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/pather-panchali/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/pather-panchali/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/pather-panchali/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/debdas</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/sesher-kabita/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/sesher-kabita/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/sesher-kabita/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/sesher-kabita/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/hsc-english-grammar</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/sesher-kabita/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/sesher-kabita/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/sesher-kabita/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/sesher-kabita/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/ssc-physics-guide</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/debdas/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/debdas/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/debdas/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/debdas/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/chotoder-golpo</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/debdas/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/debdas/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/debdas/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/debdas/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/computer-basics</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/hsc-english-grammar/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/hsc-english-grammar/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/hsc-english-grammar/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/hsc-english-grammar/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/bangla-grammar</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/hsc-english-grammar/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/hsc-english-grammar/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/hsc-english-grammar/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/hsc-english-grammar/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/aranyak</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/ssc-physics-guide/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/ssc-physics-guide/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/ssc-physics-guide/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/ssc-physics-guide/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/gora</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/ssc-physics-guide/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/ssc-physics-guide/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/ssc-physics-guide/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/ssc-physics-guide/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/english-word-book</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/chotoder-golpo/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/chotoder-golpo/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/chotoder-golpo/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/chotoder-golpo/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/library/biggan-mojar</loc>
-<lastmod>2026-11-28T10:25:38.174Z</lastmod>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/chotoder-golpo/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/chotoder-golpo/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/chotoder-golpo/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/chotoder-golpo/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/training/basic-computer-training</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/computer-basics/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/computer-basics/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/computer-basics/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/computer-basics/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/computer-basics/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/computer-basics/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/computer-basics/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/computer-basics/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/bangla-grammar/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/bangla-grammar/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/bangla-grammar/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/bangla-grammar/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/bangla-grammar/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/bangla-grammar/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/bangla-grammar/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/bangla-grammar/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/aranyak/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/aranyak/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/aranyak/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/aranyak/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/aranyak/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/aranyak/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/aranyak/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/aranyak/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/gora/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/gora/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/gora/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/gora/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/gora/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/gora/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/gora/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/gora/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/english-word-book/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/english-word-book/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/english-word-book/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/english-word-book/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/english-word-book/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/english-word-book/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/english-word-book/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/english-word-book/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/library/biggan-mojar/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/biggan-mojar/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/biggan-mojar/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/biggan-mojar/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/library/biggan-mojar/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/library/biggan-mojar/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/library/biggan-mojar/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/library/biggan-mojar/"/>
+<lastmod>2026-11-28T10:33:42.959Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/training/basic-computer-training/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/basic-computer-training/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/basic-computer-training/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/basic-computer-training/"/>
 <lastmod>2026-11-28T08:24:34.309Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/training/microsoft-excel</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/training/basic-computer-training/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/basic-computer-training/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/basic-computer-training/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/basic-computer-training/"/>
+<lastmod>2026-11-28T08:24:34.309Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/training/microsoft-excel/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/microsoft-excel/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/microsoft-excel/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/microsoft-excel/"/>
 <lastmod>2026-11-28T08:24:34.311Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/training/graphic-design</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/training/microsoft-excel/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/microsoft-excel/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/microsoft-excel/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/microsoft-excel/"/>
+<lastmod>2026-11-28T08:24:34.311Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/training/graphic-design/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/graphic-design/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/graphic-design/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/graphic-design/"/>
 <lastmod>2026-11-28T08:24:34.312Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/training/bangla-english-typing</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/training/graphic-design/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/graphic-design/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/graphic-design/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/graphic-design/"/>
+<lastmod>2026-11-28T08:24:34.312Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/training/bangla-english-typing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/bangla-english-typing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/bangla-english-typing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/bangla-english-typing/"/>
 <lastmod>2026-11-28T08:24:34.314Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/training/online-application-training</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/training/bangla-english-typing/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/bangla-english-typing/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/bangla-english-typing/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/bangla-english-typing/"/>
+<lastmod>2026-11-28T08:24:34.314Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/training/online-application-training/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/online-application-training/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/online-application-training/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/online-application-training/"/>
 <lastmod>2026-11-28T08:24:34.316Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://shawonhaque.github.io/Hawa-Computer-/training/internet-email-basics</loc>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/training/online-application-training/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/online-application-training/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/online-application-training/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/online-application-training/"/>
+<lastmod>2026-11-28T08:24:34.316Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/training/internet-email-basics/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/internet-email-basics/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/internet-email-basics/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/internet-email-basics/"/>
+<lastmod>2026-11-28T08:24:34.317Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://shawonhaque.github.io/Hawa-Computer-/en/training/internet-email-basics/</loc>
+<xhtml:link rel="alternate" hreflang="bn" href="https://shawonhaque.github.io/Hawa-Computer-/training/internet-email-basics/"/><xhtml:link rel="alternate" hreflang="en" href="https://shawonhaque.github.io/Hawa-Computer-/en/training/internet-email-basics/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://shawonhaque.github.io/Hawa-Computer-/training/internet-email-basics/"/>
 <lastmod>2026-11-28T08:24:34.317Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
