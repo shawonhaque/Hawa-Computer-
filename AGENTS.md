@@ -23,6 +23,10 @@
 - New nav entries go in `src/lib/nav.ts`; their labels live in `d.admin` / `d.account`.
 
 ## Gotchas
+- The Docker deps stage must `COPY prisma ./prisma` before `npm ci`: the lockfile triggers a
+  `postinstall` `prisma generate`, which fails without a schema and breaks the image job.
+- Absolute URLs (canonical, OG, sitemap) go through `siteUrl()` in `src/lib/site-url.ts`. It ignores
+  `localhost` origins so a local `next build` cannot bake `http://localhost:3000` into the static export.
 - `Invoice.discount` and `Order.discount` have no Prisma default — always set them explicitly.
 - `requireStaff` redirects roles without `DASHBOARD_VIEW` to `/account?denied=1` to avoid an
   `/admin` redirect loop.
