@@ -5,7 +5,7 @@ import "./globals.css";
 import { ToastProvider } from "@/components/ui/toast";
 import { Flash } from "@/components/ui/flash";
 import { getLocale } from "@/lib/i18n";
-import { getSettings } from "@/lib/settings";
+import { getSettings, siteTitle } from "@/lib/settings";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const bengali = Hind_Siliguri({
@@ -28,14 +28,14 @@ export async function generateMetadata(): Promise<Metadata> {
   const [locale, settings] = await Promise.all([getLocale(), getSettings()]);
   const bn = locale === "bn";
   const name = bn ? settings.businessNameBn : settings.businessNameEn;
-  const tagline = bn ? settings.taglineBn : settings.taglineEn;
+  const title = siteTitle(name, bn ? settings.taglineBn : settings.taglineEn);
   const description = bn
     ? "কম্পিউটার সেবা, অনলাইন আবেদন, পাসপোর্ট সহায়তা, ফটো স্টুডিও, ডকুমেন্ট প্রস্তুতি, স্টেশনারি, বই ও কম্পিউটার প্রশিক্ষণ — এক ঠিকানায়।"
     : "Computer services, online applications, passport assistance, photo studio, document preparation, stationery, books and computer training — all in one place.";
 
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-    title: { default: `${name} — ${tagline}`, template: `%s | ${name}` },
+    title: { default: title, template: `%s | ${name}` },
     description,
     keywords: bn
       ? ["কম্পিউটার সেবা", "অনলাইন আবেদন", "পাসপোর্ট সহায়তা", "ফটো স্টুডিও", "স্টেশনারি", "কম্পিউটার প্রশিক্ষণ"]
@@ -43,11 +43,11 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: "website",
       siteName: name,
-      title: `${name} — ${tagline}`,
+      title,
       description,
       locale: bn ? "bn_BD" : "en_US",
     },
-    twitter: { card: "summary_large_image", title: `${name} — ${tagline}`, description },
+    twitter: { card: "summary_large_image", title, description },
     robots: { index: true, follow: true },
     appleWebApp: { capable: true, title: name, statusBarStyle: "default" },
     alternates: { canonical: "/" },

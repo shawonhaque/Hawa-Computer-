@@ -25,11 +25,16 @@ export type SiteSettings = {
   heroImageUrl: string;
 };
 
+export function siteTitle(name: string, tagline?: string | null): string {
+  const trimmed = tagline?.trim();
+  return trimmed ? `${name} — ${trimmed}` : name;
+}
+
 export const DEFAULT_SETTINGS: SiteSettings = {
   businessNameBn: "হাওয়া কম্পিউটার",
   businessNameEn: "Hawa Computer",
-  taglineBn: "ডিজিটাল সেবার নির্ভরযোগ্য ঠিকানা",
-  taglineEn: "Your trusted digital service centre",
+  taglineBn: "",
+  taglineEn: "",
   phone: process.env.BUSINESS_PHONE ?? "+8801342101686",
   whatsapp: process.env.BUSINESS_WHATSAPP ?? "8801342101686",
   email: process.env.BUSINESS_EMAIL ?? "hawacomputer2014@gmail.com",

@@ -47,7 +47,7 @@ export function Footer({ locale, settings }: { locale: Locale; settings: SiteSet
               className="h-16 w-auto object-contain drop-shadow-[0_10px_24px_rgba(29,27,49,0.16)]"
             />
             <p className="mt-3 text-sm font-bold">{name}</p>
-            <p className="text-xs text-muted">{tagline}</p>
+            {tagline ? <p className="text-xs text-muted">{tagline}</p> : null}
 
             <div className="mt-4 flex items-center gap-2">
               {settings.facebook ? (
@@ -174,9 +174,11 @@ export function Footer({ locale, settings }: { locale: Locale; settings: SiteSet
       <div className="border-t border-white/70">
         <div className="container-page flex flex-col items-center justify-between gap-2 py-4 text-xs text-muted sm:flex-row">
           <p>© {new Date().getFullYear()} {name}. {d.footer.rights}</p>
-          <p className="flex items-center gap-1.5">
-            <ShoppingBag size={12} className="text-royal" /> {tagline}
-          </p>
+          {tagline ? (
+            <p className="flex items-center gap-1.5">
+              <ShoppingBag size={12} className="text-royal" /> {tagline}
+            </p>
+          ) : null}
         </div>
       </div>
     </footer>

@@ -8,7 +8,6 @@ export function isLocale(value: unknown): value is Locale {
 
 const bn = {
   brand: "হাওয়া কম্পিউটার",
-  tagline: "ডিজিটাল সেবার নির্ভরযোগ্য ঠিকানা",
   nav: {
     home: "হোম",
     services: "সেবাসমূহ",
@@ -315,7 +314,6 @@ const bn = {
 
 const en: typeof bn = {
   brand: "Hawa Computer",
-  tagline: "Your trusted digital service centre",
   nav: {
     home: "Home",
     services: "Services",

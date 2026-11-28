@@ -6,7 +6,7 @@ import { ImageCompressor } from "@/components/tools/image-compressor";
 import { getLocale } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "ছবি ছোট করুন | হাওয়া কম্পিউটার",
+  title: "ছবি ছোট করুন",
   description: "ছবির সাইজ কমান, প্রস্থ ঠিক করুন, JPG / PNG / WebP বানান — অনলাইন আবেদনের ফাইল সাইজ লিমিটে ফিট করুন।",
 };
 

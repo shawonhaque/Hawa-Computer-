@@ -450,8 +450,6 @@ export async function saveSiteSettings(formData: FormData) {
   await saveSettings({
     businessNameBn: toStr(formData.get("businessNameBn")),
     businessNameEn: toStr(formData.get("businessNameEn")),
-    taglineBn: toStr(formData.get("taglineBn")),
-    taglineEn: toStr(formData.get("taglineEn")),
     phone: toStr(formData.get("phone")),
     whatsapp: toStr(formData.get("whatsapp")),
     email: toStr(formData.get("email")),

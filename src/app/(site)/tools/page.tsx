@@ -19,7 +19,7 @@ import { getLocale } from "@/lib/i18n";
 import { SITE_TOOLS } from "@/lib/tools";
 
 export const metadata: Metadata = {
-  title: "টুলস ও প্যাকেজ | হাওয়া কম্পিউটার",
+  title: "টুলস ও প্যাকেজ",
   description:
     "ফটো স্টুডিও, ডকুমেন্ট, অনলাইন আবেদন, প্রিন্ট ও দোকানের সব টুল আর প্যাকেজ এক জায়গায় — হাওয়া কম্পিউটার।",
 };

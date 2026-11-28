@@ -6,7 +6,7 @@ import { PdfBuilder } from "@/components/tools/pdf-builder";
 import { getLocale } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "ছবি থেকে PDF | হাওয়া কম্পিউটার",
+  title: "ছবি থেকে PDF",
   description: "একাধিক ছবি সাজিয়ে A4, Letter বা Legal সাইজের PDF বানান — সম্পূর্ণ ব্রাউজারেই, কোনো আপলোড ছাড়া।",
 };
 

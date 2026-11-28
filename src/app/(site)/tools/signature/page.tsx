@@ -6,7 +6,7 @@ import { SignatureCutter } from "@/components/tools/signature-cutter";
 import { getLocale } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "স্বাক্ষর কাটিং | হাওয়া কম্পিউটার",
+  title: "স্বাক্ষর কাটিং",
   description: "কাগজে তোলা স্বাক্ষরের ব্যাকগ্রাউন্ড মুছে স্বচ্ছ PNG বানান — ই-পাসপোর্ট, এনআইডি ও ফরমের সাইজে।",
 };
 

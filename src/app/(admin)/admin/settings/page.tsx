@@ -23,8 +23,6 @@ export default async function AdminSettingsPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div><Label htmlFor="businessNameBn">Business name (BN)</Label><Input id="businessNameBn" name="businessNameBn" defaultValue={settings.businessNameBn} /></div>
           <div><Label htmlFor="businessNameEn">Business name (EN)</Label><Input id="businessNameEn" name="businessNameEn" defaultValue={settings.businessNameEn} /></div>
-          <div><Label htmlFor="taglineBn">Tagline (BN)</Label><Input id="taglineBn" name="taglineBn" defaultValue={settings.taglineBn} /></div>
-          <div><Label htmlFor="taglineEn">Tagline (EN)</Label><Input id="taglineEn" name="taglineEn" defaultValue={settings.taglineEn} /></div>
           <div><Label htmlFor="phone">Phone</Label><Input id="phone" name="phone" defaultValue={settings.phone} /></div>
           <div><Label htmlFor="whatsapp">WhatsApp</Label><Input id="whatsapp" name="whatsapp" defaultValue={settings.whatsapp} /></div>
           <div><Label htmlFor="email">Email</Label><Input id="email" name="email" type="email" defaultValue={settings.email} /></div>

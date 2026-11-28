@@ -291,8 +291,8 @@ export async function seedContent(prisma: PrismaClient) {
   const settings: Record<string, Prisma.InputJsonValue> = {
     businessNameBn: "হাওয়া কম্পিউটার",
     businessNameEn: "Hawa Computer",
-    taglineBn: "ডিজিটাল সেবার নির্ভরযোগ্য ঠিকানা",
-    taglineEn: "Your trusted digital service centre",
+    taglineBn: "",
+    taglineEn: "",
     phone: "+8801342101686",
     whatsapp: "8801342101686",
     email: "hawacomputer2014@gmail.com",

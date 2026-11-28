@@ -41,7 +41,11 @@ export default async function AboutPage() {
       <PageHero
         eyebrow={bn ? "আমাদের সম্পর্কে" : "About us"}
         title={pick<string>(page as never, "title", locale)}
-        description={bn ? settings.taglineBn : settings.taglineEn}
+        description={
+          bn
+            ? "কম্পিউটার সেবা, অনলাইন আবেদন, ফটো স্টুডিও, ডকুমেন্ট প্রস্তুতি ও প্রশিক্ষণ — এক ছাদের নিচে।"
+            : "Computer services, online applications, photo studio, document preparation and training under one roof."
+        }
       />
 
       <div className="container-page py-10">

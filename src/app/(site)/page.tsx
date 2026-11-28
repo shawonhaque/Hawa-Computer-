@@ -22,7 +22,7 @@ import { prisma } from "@/lib/db";
 import { getLocale } from "@/lib/i18n";
 import { SITE_TOOL_COUNT } from "@/lib/tools";
 import { getDict } from "@/lib/dictionaries";
-import { getSettings } from "@/lib/settings";
+import { getSettings, siteTitle } from "@/lib/settings";
 import { CourseCard, ProductCard, ServiceCard, TestimonialCard } from "@/components/site/cards";
 import { SectionHeading } from "@/components/ui/primitives";
 
@@ -34,7 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const bn = locale === "bn";
   const name = bn ? settings.businessNameBn : settings.businessNameEn;
   return {
-    title: `${name} — ${bn ? settings.taglineBn : settings.taglineEn}`,
+    title: { absolute: siteTitle(name, bn ? settings.taglineBn : settings.taglineEn) },
     description: bn
       ? "কম্পিউটার সেবা, অনলাইন আবেদন, পাসপোর্ট সহায়তা, ফটো স্টুডিও, স্টেশনারি, বই ও কম্পিউটার প্রশিক্ষণ — এক ছাদের নিচে।"
       : "Computer services, online applications, passport assistance, photo studio, stationery, books and computer training — all under one roof.",
