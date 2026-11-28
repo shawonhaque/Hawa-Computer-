@@ -81,7 +81,7 @@ export function Header({
     <header className="sticky top-0 z-50 border-b border-[#ececf1] bg-white/95 backdrop-blur-md">
       <div className="container-page flex h-[68px] items-center gap-3 lg:h-[78px]">
         <div className="shrink-0">
-          <Logo name={brand.name} tagline={brand.tagline} compact />
+          <Logo name={brand.name} tagline={brand.tagline} />
         </div>
 
         <nav className="hidden flex-1 items-center justify-center lg:flex" aria-label="Main">
@@ -227,7 +227,7 @@ export function Header({
         aria-hidden={!open}
       >
         <div className="mb-6 flex items-center justify-between">
-          <Logo name={brand.name} tagline={brand.tagline} compact />
+          <Logo name={brand.name} tagline={brand.tagline} />
           <button
             type="button"
             onClick={() => setOpen(false)}

@@ -4,6 +4,9 @@ import {
   ArrowRight,
   BadgeCheck,
   Camera,
+  GraduationCap,
+  Play,
+  UserRound,
   Clock,
   FileText,
   Keyboard,
@@ -113,37 +116,75 @@ export default async function HomePage() {
       <section className="relative overflow-hidden border-b border-line bg-navy text-white">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(37,99,235,0.35),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(6,182,212,0.28),transparent_40%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_15%,rgba(245,158,11,0.20),transparent_40%),radial-gradient(circle_at_85%_5%,rgba(128,104,251,0.30),transparent_45%),linear-gradient(160deg,#211d38_0%,#1d1b31_45%,#191729_100%)]"
         />
-        <div className="container-page relative py-14 sm:py-20">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-cyan backdrop-blur">
-              <Sparkles size={13} /> {bn ? settings.taglineBn : settings.taglineEn}
-            </span>
-            <h1 className="mt-5 text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
-              {d.home.heroTitle}
-            </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
-              {d.home.heroSubtitle}
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link href="/services" className="btn btn-primary">
-                {d.home.heroCtaPrimary} <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/shop"
-                className="btn border border-white/25 bg-white/10 text-white hover:bg-white/20"
-              >
-                {d.home.heroCtaSecondary}
-              </Link>
+        <div className="container-page relative py-12 sm:py-16">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-[#ffd08a] backdrop-blur">
+                <Sparkles size={13} /> {bn ? "কম্পিউটার দোকান ও স্টুডিওর জন্য" : "Built for computer shops and studios"}
+              </span>
+              <h1 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-[2.9rem] sm:leading-[1.15]">
+                {bn
+                  ? "আপনার সব ডিজিটাল কাজ এক জায়গায়, সহজ ও নিরাপদ"
+                  : "Every digital job in one place, simple and safe"}
+              </h1>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
+                {bn
+                  ? "ফটো ও স্টুডিও এডিট, এআই ডকুমেন্ট, প্রিন্ট মিডিয়া, প্রশ্ন তৈরি ও ৮০+ ফ্রি টুল — সব এক জায়গায়।"
+                  : "Photo and studio editing, AI documents, print media, question papers and 80+ free tools — all in one place."}
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <Link href="/tools/photo" className="btn btn-primary">
+                  {bn ? "এখনই শুরু করুন" : "Start now"} <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/tools"
+                  className="btn border border-white/25 bg-white/10 text-white hover:bg-white/20"
+                >
+                  <Play size={15} /> {bn ? "লাইভ ডেমো দেখুন" : "See live demo"}
+                </Link>
+              </div>
+              <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/70">
+                {[
+                  bn ? "এক ক্লিকেই ফটো এডিট" : "Photo edit in one click",
+                  bn ? "এক জায়গায় সব টুল" : "All tools in one place",
+                  bn ? "সময় বাঁচবে, ঝামেলা কমবে" : "Save time, less hassle",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-1.5">
+                    <BadgeCheck size={14} className="text-[#ffd08a]" /> {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/70">
-              {[d.home.trust1, d.home.trust2, d.home.trust3].map((item) => (
-                <li key={item} className="flex items-center gap-1.5">
-                  <BadgeCheck size={14} className="text-cyan" /> {item}
-                </li>
-              ))}
-            </ul>
+
+            <div className="relative mx-auto w-full max-w-md">
+              <div
+                className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#f59e0b]/30 via-transparent to-[#8068fb]/30 blur-xl"
+                aria-hidden="true"
+              />
+              <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white shadow-2xl">
+                <img
+                  src="/brand/logo-full.png"
+                  alt={bn ? "হাওয়া কম্পিউটার লোগো" : "Hawa Computer logo"}
+                  className="h-auto w-full object-contain"
+                  width={1024}
+                  height={1024}
+                />
+                <div className="grid grid-cols-3 divide-x divide-line border-t border-line text-center">
+                  {[
+                    { value: "80+", label: bn ? "ফ্রি টুল" : "free tools" },
+                    { value: "10+", label: bn ? "বছরের অভিজ্ঞতা" : "years" },
+                    { value: "24/7", label: bn ? "অনলাইন সেবা" : "online" },
+                  ].map((chip) => (
+                    <div key={chip.label} className="px-2 py-3">
+                      <p className="text-base font-extrabold text-royal">{chip.value}</p>
+                      <p className="text-[0.65rem] font-medium text-muted">{chip.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -375,6 +416,76 @@ export default async function HomePage() {
           </div>
         </section>
       ) : null}
+
+      <section className="border-y border-line bg-surface py-12 sm:py-16">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow={bn ? "কাদের জন্য" : "Who it is for"}
+            title={bn ? "আপনার কাজের জন্যই হাওয়া কম্পিউটার" : "Built for the work you do"}
+            subtitle={
+              bn
+                ? "দোকানের প্রতিদিনের কাজ থেকে নিজের প্রয়োজন — সব এক জায়গায় গুছিয়ে নিন।"
+                : "From everyday shop work to your own documents — all organised in one place."
+            }
+            action={
+              <Link href="/tools" className="btn btn-secondary btn-sm">
+                {bn ? "সব টুল দেখুন" : "See all tools"} <ArrowRight size={14} />
+              </Link>
+            }
+          />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                Icon: Camera,
+                titleBn: "ফটো স্টুডিও",
+                titleEn: "Photo studio",
+                bodyBn: "পাসপোর্ট সাইজ ছবি ও স্টুডিও ফটো তৈরি করুন, ব্যাকগ্রাউন্ড বদলান।",
+                bodyEn: "Passport size and studio photos with clean backgrounds.",
+                href: "/tools/photo",
+              },
+              {
+                Icon: Printer,
+                titleBn: "কম্পিউটার ও প্রিন্ট শপ",
+                titleEn: "Computer & print shop",
+                bodyBn: "আবেদনপত্র, ডকুমেন্ট ও প্রিন্ট ডিজাইন — গ্রাহকের কাজ মিনিটে রেডি।",
+                bodyEn: "Applications, documents and print designs, ready in minutes.",
+                href: "/services",
+              },
+              {
+                Icon: GraduationCap,
+                titleBn: "শিক্ষক ও কোচিং",
+                titleEn: "Teachers & coaching",
+                bodyBn: "প্রশ্ন বেছে প্রশ্নপত্র সাজান, পিডিএফ নামান ও প্রিন্ট করুন।",
+                bodyEn: "Build question papers, download PDF and print.",
+                href: "/library",
+              },
+              {
+                Icon: UserRound,
+                titleBn: "ব্যক্তিগত কাজ",
+                titleEn: "Personal work",
+                bodyBn: "ছবি রিসাইজ, পিডিএফ এডিট ও দরকারি ডকুমেন্ট তৈরি করুন।",
+                bodyEn: "Resize images, edit PDFs and make the documents you need.",
+                href: "/applications",
+              },
+            ].map((item) => (
+              <Link
+                key={item.titleEn}
+                href={item.href}
+                className="card group flex flex-col gap-3 p-5 transition hover:-translate-y-0.5 hover:border-royal hover:shadow-md"
+              >
+                <span className="grid size-11 place-items-center rounded-xl bg-royal-soft text-royal">
+                  <item.Icon size={20} />
+                </span>
+                <span className="text-base font-bold">{bn ? item.titleBn : item.titleEn}</span>
+                <span className="text-sm leading-relaxed text-muted">{bn ? item.bodyBn : item.bodyEn}</span>
+                <span className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-royal">
+                  {bn ? "দেখুন" : "View"} <ArrowRight size={13} className="transition group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {faqs.length > 0 ? (
         <section className="container-page pb-12 sm:pb-16">
