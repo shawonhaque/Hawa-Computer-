@@ -41,6 +41,7 @@ export function Footer({
               { href: "/library", label: d.nav.library },
               { href: "/training", label: d.nav.training },
               { href: "/track", label: d.nav.track },
+              { href: "/my-account", label: d.common.account },
             ].map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="transition hover:text-royal">{link.label}</Link>

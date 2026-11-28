@@ -5,9 +5,51 @@ ORIGIN="http://localhost:3001"; BP=os.environ.get("BASE_PATH", "/Hawa-Computer-"
 DOMAIN=os.environ.get("CUSTOM_DOMAIN","")
 SKIP=("/admin","/account","/api","/_next","/uploads","/favicon")
 ASSET=("/_next","/uploads","/favicon")
+EXTRA=["/checkout","/my-account"]
 href_re=re.compile(r'href="(/[^"#]*)"')
-FIX_BN='<script>(function(){var m="\\u098f\\u0987 \\u09b8\\u09cd\\u099f\\u09cd\\u09af\\u09be\\u099f\\u09bf\\u0995 \\u09aa\\u09cd\\u09b0\\u09bf\\u09ad\\u09bf\\u0989 \\u2014 \\u0985\\u09b0\\u09cd\\u09a1\\u09be\\u09b0, \\u09b2\\u0997\\u0987\\u09a8 \\u0993 \\u09ab\\u09b0\\u09cd\\u09ae \\u099a\\u09be\\u09b2\\u09c1 \\u0995\\u09b0\\u09a4\\u09c7 \\u09ab\\u09c1\\u09b2 \\u0985\\u09cd\\u09af\\u09be\\u09aa \\u09a6\\u09b0\\u0995\\u09be\\u09b0\\u0964";document.addEventListener("click",function(e){var a=e.target.closest?e.target.closest("a"):null;if(!a)return;var h=a.getAttribute("href");if(!h||h.charAt(0)==="#"||h.indexOf("http")===0||h.indexOf("mailto:")===0||h.indexOf("tel:")===0||a.target==="_blank")return;e.preventDefault();e.stopPropagation();window.location.href=h;},true);document.addEventListener("submit",function(e){e.preventDefault();e.stopPropagation();window.alert(m);},true);})();</script>'
-FIX_EN='<script>(function(){var m="This is a static preview. Ordering, login and forms need the full app.";document.addEventListener("click",function(e){var a=e.target.closest?e.target.closest("a"):null;if(!a)return;var h=a.getAttribute("href");if(!h||h.charAt(0)==="#"||h.indexOf("http")===0||h.indexOf("mailto:")===0||h.indexOf("tel:")===0||a.target==="_blank")return;e.preventDefault();e.stopPropagation();window.location.href=h;},true);document.addEventListener("submit",function(e){e.preventDefault();e.stopPropagation();window.alert(m);},true);})();</script>'
+SCRIPT_TEMPLATE = """<script>(function(){
+var B="__BP__";
+var MSG_B="\u098f\u0987 \u09b8\u09cd\u099f\u09cd\u09af\u09be\u099f\u09bf\u0995 \u09aa\u09cd\u09b0\u09bf\u09ad\u09bf\u0989 \u2014 \u0985\u09b0\u09cd\u09a1\u09be\u09b0, \u09b2\u0997\u0987\u09a8 \u0993 \u09ab\u09b0\u09cd\u09ae \u099a\u09be\u09b2\u09c1 \u0995\u09b0\u09a4\u09c7 \u09ab\u09c1\u09b2 \u0985\u09cd\u09af\u09be\u09aa \u09a6\u09b0\u0995\u09be\u09b0\u0964";
+var MSG_E="This is a static preview. Ordering, login and forms need the full app.";
+function map(h){
+  if(!h)return h;
+  if(h.indexOf("/api/locale?")===0){
+    var nx=decodeURIComponent((h.match(/next=([^&]*)/)||[])[1]||"/");
+    if(nx.indexOf(B)===0)nx=nx.slice(B.length);
+    h=(/lang=en/.test(h)?"/en":"")+nx;
+  }
+  if(h.charAt(0)==="/"&&h.indexOf(B)!==0)h=B+h;
+  return h;
+}
+function fixAll(){
+  var els=document.querySelectorAll('a[href^="/"],form[action^="/"],img[src^="/"],link[href^="/"],source[src^="/"]');
+  for(var i=0;i<els.length;i++){
+    var el=els[i],attrs=["href","src","action"];
+    for(var j=0;j<attrs.length;j++){
+      var a=attrs[j];
+      if(el.hasAttribute(a)){var v=el.getAttribute(a),n=map(v);if(n!==v)el.setAttribute(a,n);}
+    }
+  }
+}
+document.addEventListener("click",function(e){
+  var a=e.target.closest?e.target.closest("a"):null;
+  if(!a)return;
+  var h=a.getAttribute("href");
+  if(!h||h.charAt(0)==="#"||h.indexOf("http")===0||h.indexOf("mailto:")===0||h.indexOf("tel:")===0||a.target==="_blank")return;
+  e.preventDefault();e.stopPropagation();window.location.href=map(h);
+},true);
+document.addEventListener("submit",function(e){
+  if(e.target&&e.target.hasAttribute&&e.target.hasAttribute("data-allow-submit"))return;
+  e.preventDefault();e.stopPropagation();window.alert(__MSG__);
+},true);
+new MutationObserver(fixAll).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:["href","src","action"]});
+document.addEventListener("DOMContentLoaded",fixAll);
+setTimeout(fixAll,150);setTimeout(fixAll,800);setTimeout(fixAll,2000);
+})();</script>"""
+
+FIX_BN = SCRIPT_TEMPLATE.replace("__MSG__", "MSG_B")
+FIX_EN = SCRIPT_TEMPLATE.replace("__MSG__", "MSG_E")
+
 
 def fetch(path, cookie):
     try:
@@ -19,7 +61,7 @@ def fetch(path, cookie):
         return None
 
 def crawl(cookie):
-    seen, pages, queue = set(), {}, ["/"]
+    seen, pages, queue = set(), {}, ["/"]+EXTRA
     with ThreadPoolExecutor(max_workers=12) as pool:
         while queue:
             batch, queue = queue, []
@@ -45,7 +87,8 @@ def rewrite(body, P, is_en):
         if is_en: return '%s="%s/en"' % (attr,BP) if url=="/" else '%s="%s/en%s"' % (attr,BP,url)
         return '%s="%s%s"' % (attr,BP,url)
     s=re.sub(r'(href|action|src)="(/[^"]*)"', fix, s)
-    return s.replace("</body>", (FIX_EN if is_en else FIX_BN)+"</body>", 1)
+    fix_script=(FIX_EN if is_en else FIX_BN).replace("__BP__", BP)
+    return s.replace("</body>", fix_script+"</body>", 1)
 
 shutil.rmtree(OUT, ignore_errors=True); os.makedirs(OUT, exist_ok=True)
 bn=crawl(None); print("bn pages:", len(bn), flush=True)

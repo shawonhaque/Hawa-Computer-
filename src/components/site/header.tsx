@@ -18,6 +18,7 @@ import { Logo } from "@/components/site/logo";
 import { LocaleSwitcher } from "@/components/ui/locale-switcher";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useCart } from "@/lib/cart";
+import { logoutUser, useLocalSession } from "@/lib/local-auth";
 import { logout } from "@/actions/auth";
 import type { Locale } from "@/lib/dictionaries";
 import { cn } from "@/lib/utils";
@@ -53,6 +54,9 @@ export function Header({
 }) {
   const pathname = usePathname();
   const { count, ready } = useCart();
+  const { session } = useLocalSession();
+  const activeUser = user ?? (session ? { name: session.name, isStaff: false } : null);
+  const accountHref = user ? "/account" : "/my-account";
   const [open, setOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -135,7 +139,7 @@ export function Header({
             ) : null}
           </Link>
 
-          {user ? (
+          {activeUser ? (
             <div className="relative" ref={accountRef}>
               <button
                 type="button"
@@ -144,29 +148,42 @@ export function Header({
                 className="flex items-center gap-2 rounded-full bg-[linear-gradient(135deg,#f59e0b,var(--royal))] px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-105"
               >
                 <span className="grid size-5 place-items-center rounded-full bg-white/25 text-[0.6rem] font-bold">
-                  {user.name.slice(0, 1).toUpperCase()}
+                  {activeUser.name.slice(0, 1).toUpperCase()}
                 </span>
-                <span className="hidden max-w-24 truncate sm:block">{user.name.split(" ")[0]}</span>
+                <span className="hidden max-w-24 truncate sm:block">{activeUser.name.split(" ")[0]}</span>
                 <ChevronDown size={13} />
               </button>
               {accountOpen ? (
                 <div className="absolute right-0 top-full z-50 mt-2 w-52 overflow-hidden rounded-xl border border-line bg-surface p-1.5 shadow-lg">
-                  <Link href="/account" className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-surface-2">
+                  <Link href={accountHref} className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-surface-2">
                     <User size={15} /> {labels.account}
                   </Link>
-                  {user.isStaff ? (
+                  {activeUser.isStaff ? (
                     <Link href="/admin" className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-surface-2">
                       <LayoutDashboard size={15} /> {labels.admin}
                     </Link>
                   ) : null}
-                  <form action={logout}>
+                  {user ? (
+                    <form action={logout}>
+                      <button
+                        type="submit"
+                        className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-danger hover:bg-danger/10"
+                      >
+                        <LogOut size={15} /> {labels.logout}
+                      </button>
+                    </form>
+                  ) : (
                     <button
-                      type="submit"
+                      type="button"
+                      onClick={() => {
+                        logoutUser();
+                        window.location.reload();
+                      }}
                       className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-danger hover:bg-danger/10"
                     >
                       <LogOut size={15} /> {labels.logout}
                     </button>
-                  </form>
+                  )}
                 </div>
               ) : null}
             </div>
@@ -259,13 +276,26 @@ export function Header({
         </div>
 
         <div className="mt-4 grid gap-2">
-          {user ? (
+          {activeUser ? (
             <>
-              <Link href="/account" className="btn btn-secondary btn-sm justify-center">{labels.account}</Link>
-              {user.isStaff ? <Link href="/admin" className="btn btn-secondary btn-sm justify-center">{labels.admin}</Link> : null}
-              <form action={logout}>
-                <button type="submit" className="btn btn-ghost btn-sm w-full justify-center text-danger">{labels.logout}</button>
-              </form>
+              <Link href={accountHref} className="btn btn-secondary btn-sm justify-center">{labels.account}</Link>
+              {activeUser.isStaff ? <Link href="/admin" className="btn btn-secondary btn-sm justify-center">{labels.admin}</Link> : null}
+              {user ? (
+                <form action={logout}>
+                  <button type="submit" className="btn btn-ghost btn-sm w-full justify-center text-danger">{labels.logout}</button>
+                </form>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    logoutUser();
+                    window.location.reload();
+                  }}
+                  className="btn btn-ghost btn-sm w-full justify-center text-danger"
+                >
+                  {labels.logout}
+                </button>
+              )}
             </>
           ) : (
             <>

@@ -15,8 +15,8 @@ ln -sfn "$SRC/node_modules" "$WORK/node_modules"
 
 cd "$WORK"
 ps aux | grep next-server | grep -v grep | awk '{print $2}' | xargs -r kill -9
-NEXT_PUBLIC_ASSET_PREFIX="$BASE_PATH" npx next build
-nohup env NEXT_PUBLIC_ASSET_PREFIX="$BASE_PATH" PORT=3001 npx next start -p 3001 > /tmp/hawa-static.log 2>&1 &
+NEXT_PUBLIC_ASSET_PREFIX="$BASE_PATH" NEXT_PUBLIC_ROUTE_PREFIX="$BASE_PATH" NEXT_PUBLIC_STATIC_MODE=1 npx next build
+nohup env NEXT_PUBLIC_ASSET_PREFIX="$BASE_PATH" NEXT_PUBLIC_ROUTE_PREFIX="$BASE_PATH" NEXT_PUBLIC_STATIC_MODE=1 PORT=3001 npx next start -p 3001 > /tmp/hawa-static.log 2>&1 &
 for _ in $(seq 1 30); do
   curl -sf -o /dev/null http://localhost:3001/ && break
   sleep 2

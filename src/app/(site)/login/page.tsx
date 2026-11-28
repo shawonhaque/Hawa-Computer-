@@ -5,6 +5,8 @@ import { getSessionUser } from "@/lib/auth";
 import { getLocale } from "@/lib/i18n";
 import { getDict } from "@/lib/dictionaries";
 import { LoginForm } from "@/components/auth/auth-forms";
+import { StaticLoginForm } from "@/components/auth/static-auth";
+import { STATIC_MODE } from "@/lib/local-auth";
 
 export const dynamic = "force-dynamic";
 
@@ -14,13 +16,33 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function LoginPage({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
-  const user = await getSessionUser();
-  if (user) redirect(user.role.isStaff ? "/admin" : "/account");
+  const user = STATIC_MODE ? null : await getSessionUser();
+  if (!STATIC_MODE && user) redirect(user.role.isStaff ? "/admin" : "/account");
 
   const locale = await getLocale();
   const d = getDict(locale);
   const bn = locale === "bn";
   const { next } = await searchParams;
+  const loginLabels = {
+    name: d.auth.name,
+    email: d.auth.email,
+    phone: d.auth.phone,
+    password: d.auth.password,
+    confirmPassword: d.auth.confirmPassword,
+    consent: d.auth.consent,
+    submit: d.common.login,
+    invalid: d.auth.invalid,
+    exists: d.auth.exists,
+    required: d.validation.required,
+    emailInvalid: d.validation.email,
+    phoneInvalid: d.validation.phone,
+    min: bn ? "পাসওয়ার্ড অন্তত ৮ অক্ষরের হতে হবে" : "Password must be at least 8 characters",
+    mismatch: d.validation.passwordMatch,
+    consentRequired: d.validation.consent,
+    rateLimited: bn ? "অনেকবার চেষ্টা হয়েছে, একটু পরে আবার চেষ্টা করুন" : "Too many attempts, please try again shortly",
+    suspended: bn ? "এই অ্যাকাউন্টটি স্থগিত" : "This account is suspended",
+    setup: bn ? "সেটআপ অসম্পূর্ণ" : "Setup incomplete",
+  };
 
   return (
     <div className="container-page grid min-h-[70vh] place-items-center py-12">
@@ -30,29 +52,17 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
           <p className="mt-1 text-sm text-muted">{d.auth.loginSub}</p>
 
           <div className="mt-6">
-            <LoginForm
-              next={next}
-              labels={{
-                name: d.auth.name,
-                email: d.auth.email,
-                phone: d.auth.phone,
-                password: d.auth.password,
-                confirmPassword: d.auth.confirmPassword,
-                consent: d.auth.consent,
-                submit: d.common.login,
-                invalid: d.auth.invalid,
-                exists: d.auth.exists,
-                required: d.validation.required,
-                emailInvalid: d.validation.email,
-                phoneInvalid: d.validation.phone,
-                min: bn ? "পাসওয়ার্ড অন্তত ৮ অক্ষরের হতে হবে" : "Password must be at least 8 characters",
-                mismatch: d.validation.passwordMatch,
-                consentRequired: d.validation.consent,
-                rateLimited: bn ? "অনেকবার চেষ্টা হয়েছে, একটু পরে আবার চেষ্টা করুন" : "Too many attempts, please try again shortly",
-                suspended: bn ? "এই অ্যাকাউন্টটি স্থগিত" : "This account is suspended",
-                setup: bn ? "সেটআপ অসম্পূর্ণ" : "Setup incomplete",
-              }}
-            />
+            {STATIC_MODE ? (
+              <StaticLoginForm
+                next={next}
+                labels={loginLabels}
+              />
+            ) : (
+              <LoginForm
+                next={next}
+                labels={loginLabels}
+              />
+            )}
           </div>
 
           <p className="mt-5 text-center text-sm text-muted">
